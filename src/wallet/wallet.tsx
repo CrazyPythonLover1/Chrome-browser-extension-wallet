@@ -1,3 +1,9 @@
+// -----------------------------------  WARNING  ---------------------------------------------- 
+// -----------------------------------  WARNING  ---------------------------------------------- 
+// -----------------------------------  WARNING  ---------------------------------------------- 
+
+// We are using src/index.tsx instead of wallet.tsx
+
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './wallet.css'
