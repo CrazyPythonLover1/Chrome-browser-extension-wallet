@@ -1,10 +1,10 @@
-# __BrandName Browser Extension Wallet
+# Clutch Browser Extension Wallet
 
-The __BrandName browser extension wallet is an Ethereum smart contract wallet with social recovery via the guardianship concept and is designed work in the Chrome browser.
+The Clutch browser extension wallet is an Ethereum smart contract wallet with social recovery via the guardianship concept and is designed work in the Chrome browser.
 
 ## Supported Platforms
 
-The __BrandName browser extension wallet is designed to work with the Chrome browser and is tested and supported on the following platforms:
+The Clutch browser extension wallet is designed to work with the Chrome browser and is tested and supported on the following platforms:
 
 | platform | chrome version |
 | :------: | :------------: |

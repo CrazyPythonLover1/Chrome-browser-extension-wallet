@@ -16,33 +16,33 @@ const theme = createTheme({
   },
   breakpoints: {
     values: {
-      mb: 320,
+      // mb: 320,
       xs: 480,
       sm: 768,
       md: 1024,
-      def: 1200,
+      // def: 1200,
       lg: 1440,
       xl: 1920,
     },
   },
-  variants: {
-    MuiButton: [
-      {
-        props: { variant: "dashed" },
-        styles: {
-          padding: "5px 15px",
-          border: `5px dashed #000000`,
-        },
-      },
-      {
-        props: { variant: "dashed", color: "secondary" },
-        styles: {
-          padding: "5px 15px",
-          border: `5px dashed #000000`,
-        },
-      },
-    ],
-  },
+  // variants: {
+  //   MuiButton: [
+  //     {
+  //       props: { variant: "dashed" },
+  //       styles: {
+  //         padding: "5px 15px",
+  //         border: `5px dashed #000000`,
+  //       },
+  //     },
+  //     {
+  //       props: { variant: "dashed", color: "secondary" },
+  //       styles: {
+  //         padding: "5px 15px",
+  //         border: `5px dashed #000000`,
+  //       },
+  //     },
+  //   ],
+  // },
 });
 
 export default theme;
