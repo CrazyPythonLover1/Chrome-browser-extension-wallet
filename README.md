@@ -1,21 +1,21 @@
-# Clutch Browser Extension Wallet
+# \_\_BrandName Browser Extension Wallet
 
-The Clutch browser extension wallet is an Ethereum smart contract wallet with social recovery via the guardianship concept and is designed work in the Chrome browser.
+The \_\_BrandName browser extension wallet is an Ethereum smart contract wallet with social recovery via the guardianship concept and is designed work in the Chrome browser.
 
 ## Supported Platforms
 
-The Clutch browser extension wallet is designed to work with the Chrome browser and is tested and supported on the following platforms:
+The \_\_BrandName browser extension wallet is designed to work with the Chrome browser and is tested and supported on the following platforms:
 
 | platform | chrome version |
 | :------: | :------------: |
 |  macOS   | 108.0.5359.124 |
-|  Windows | 108.0.5359.124 |
+| Windows  | 108.0.5359.124 |
 |  Linux   | 108.0.5359.124 |
 
 ### Supported Blockchains
 
-* Ethereum
-* (more EVM based chain support to follow)
+- Ethereum
+- (more EVM based chain support to follow)
 
 ## Development
 
@@ -25,10 +25,10 @@ The following sections explain how to get started developing the browser extensi
 
 The extension wallet is designed to work with the Chrome browser and utilizes the following tech stack:
 
-* React / Typescript
-* Material UI React Components
-* Ethereum smart contracts (EIP-4337 account abstraction via alternative mempool)
-* Chrome browser
+- React / Typescript
+- Material UI React Components
+- Ethereum smart contracts (EIP-4337 account abstraction via alternative mempool)
+- Chrome browser
 
 ### Local Development
 
