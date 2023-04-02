@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import { ReceiveIcon, SendIcon } from "../../components/Svg";
+import TotalValue from "./components/TotalValue";
 
 const Container = styled.div`
   padding: 16px;
@@ -14,6 +15,7 @@ function HomePage() {
     <Box>
       <Header />
       <Container>
+        <TotalValue />
         <Box
           sx={{
             display: "flex",
