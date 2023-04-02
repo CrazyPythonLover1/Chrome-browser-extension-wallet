@@ -24,8 +24,6 @@ const Svg = (props) => {
       ? "20px"
       : size === "sm"
       ? "16px"
-      : size !== "lg" && size !== "md" && size !== "sm"
-      ? width
       : "16px";
   const h =
     size === "lg"
@@ -34,15 +32,13 @@ const Svg = (props) => {
       ? "20px"
       : size === "sm"
       ? "16px"
-      : size !== "lg" && size !== "md" && size !== "sm"
-      ? height
       : "16px";
 
   return (
     <svg
-      width={w}
-      height={h}
-      viewBox="0 0 24 24"
+      width={width ? width : w}
+      height={height ? height : h}
+      viewBox="0 0 18 20"
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
       strokeWidth={"1.4px"}

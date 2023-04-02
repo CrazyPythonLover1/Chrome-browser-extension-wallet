@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home/index";
 import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material";
+import Footer from "./components/Footer";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -18,6 +19,7 @@ function AppContainer() {
       <Routes>
         <Route path="/" element={<HomePage />} />
       </Routes>
+      <Footer />
     </Container>
   );
 }

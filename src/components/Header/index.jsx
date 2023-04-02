@@ -30,7 +30,7 @@ function Header() {
       }}
     >
       <Box>
-        <WalletIcon color={theme.palette.text_colors.primary_550} />
+        <WalletIcon color={theme.palette.key_colors.primary_550} />
       </Box>
       <Box>
         <AccountList>
