@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import styled from "@emotion/styled";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
+import Dialog from "./components/Dialog";
 import { ReceiveIcon, SendIcon } from "../../components/Svg";
 import TotalValue from "./components/TotalValue";
 
@@ -11,6 +12,22 @@ const Container = styled.div`
 `;
 
 function HomePage() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setOpen(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
   return (
     <Box>
       <Header />
@@ -22,6 +39,7 @@ function HomePage() {
             justifyContent: "center",
             alignItems: "center",
             gap: "16px",
+            marginTop: "16px",
           }}
         >
           <Button
@@ -41,6 +59,8 @@ function HomePage() {
             onClick={() => console.log("Button clicked!")}
           />
         </Box>
+
+        <Dialog open={open} onClose={handleClose} />
       </Container>
     </Box>
   );

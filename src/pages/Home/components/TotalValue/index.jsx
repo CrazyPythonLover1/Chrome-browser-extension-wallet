@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { DivFlex } from "../../../../components";
 
@@ -9,20 +9,46 @@ function TotalValue() {
   return (
     <Box
       sx={{
-        border: "2px solid",
-        borderImage: `${theme.palette.purple_gradient.primary} 1`,
-        width: "100%",
+        backgroundImage: `${theme.palette.purple_gradient.primary}`,
+        borderRadius: "12px",
         height: "79px",
+        padding: "2px",
         display: "flex",
-        // justifyContent: "space-between",
         alignItems: "center",
       }}
     >
-      <DivFlex justifyContent="space-between" alignItems="center">
-        <Box>$ 2,972.00</Box>
+      <DivFlex
+        justifyContent="space-between"
+        alignItems="center"
+        style={{
+          width: "100%",
+          height: "75px",
+          border: "2px solid transparent",
+          borderRadius: "12px",
+          background: "white",
+          padding: "0 18px",
+        }}
+      >
         <Box>
-          <Box>+$172.00</Box>
-          <Box>5.08%</Box>
+          <Typography variant="h2"> $ 2,972.00 </Typography>
+        </Box>
+        <Box>
+          <Box>
+            <Typography
+              variant="caption"
+              sx={{ color: theme.palette.success.light }}
+            >
+              +$172.00
+            </Typography>
+          </Box>
+          <Box>
+            <Typography
+              variant="subtitle2"
+              sx={{ color: theme.palette.success.light }}
+            >
+              5.08%
+            </Typography>
+          </Box>
         </Box>
       </DivFlex>
     </Box>

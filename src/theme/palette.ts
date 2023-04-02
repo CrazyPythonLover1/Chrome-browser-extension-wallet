@@ -223,8 +223,8 @@ export default {
   success: {
     contrastText: white,
     dark: colors.green[900],
-    main: colors.green[600],
-    light: colors.green[400],
+    main: "#108F65",
+    light: "#108F65",
   },
   info: {
     contrastText: white,

@@ -3,7 +3,7 @@ import Svg from "../Svg";
 
 const Send = (props) => {
   return (
-    <Svg viewBox="0 0 20 19" {...props}>
+    <Svg viewBox="0 0 21 19" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"

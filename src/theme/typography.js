@@ -1,88 +1,92 @@
-import palette from './palette';
+import palette from "./palette";
 
 export default {
   h1: {
     fontWeight: 400,
-    fontSize: '48px',
-    letterSpacing: '0px',
-    lineHeight: '64px'
+    fontSize: "48px",
+    letterSpacing: "0px",
+    lineHeight: "64px",
   },
   h2: {
-    color: palette.text.primary,
+    color: palette.text_colors.primary_550,
     fontWeight: 500,
-    fontSize: '28px',
-    letterSpacing: '-0.24px',
-    lineHeight: '32px'
+    fontSize: "32px",
+    letterSpacing: "-0.24px",
+    lineHeight: "40px",
   },
   h3: {
     color: palette.text.primary,
     fontWeight: 500,
-    fontSize: '24px',
-    letterSpacing: '-0.06px',
-    lineHeight: '28px'
+    fontSize: "24px",
+    letterSpacing: "-0.06px",
+    lineHeight: "28px",
   },
   h4: {
     color: palette.text.primary,
     fontWeight: 500,
-    fontSize: '1.25em',
-    letterSpacing: '-0.06px',
-    lineHeight: '24px'
+    fontSize: "20px",
+    lineHeight: "24px",
   },
   h5: {
-    fontSize: '20px',
+    color: palette.text_colors.neutral_675,
+    fontStyle: "normal",
+    fontSize: "18px",
     fontWeight: 500,
-    letterSpacing: '0px',
-    lineHeight: '28px'
+    lineHeight: "24px",
   },
   h6: {
-    color: palette.text.primary,
+    color: palette.text_colors.primary_550,
+    fontStyle: "normal",
     fontWeight: 500,
-    fontSize: '0.8750em',
-    letterSpacing: '-0.05px',
-    lineHeight: '20px'
+    fontSize: "16px",
+    // letterSpacing: "-0.05px",
+    lineHeight: "20px",
   },
   subtitle1: {
     color: palette.text.primary,
-    letterSpacing: '-0.05px',
-    lineHeight: '25px'
+    fontWeight: 500,
+    fontSize: "14px",
+    letterSpacing: "-0.05px",
+    lineHeight: "20px",
   },
   subtitle2: {
     fontWeight: 400,
-    fontSize: '0.8750em',
-    letterSpacing: '-0.05px',
-    lineHeight: '21px'
+    fontSize: "12px",
+    fontStyle: "normal",
+    lineHeight: "20px",
   },
   body1: {
+    color: palette.text_colors.neutral_675,
+    fontWeight: 400,
     fontStyle: "normal",
-    fontSize: '16px',
-    lineHeight: '24px',
-    letterSpacing: '0px'
+    fontSize: "16px",
+    lineHeight: "20px",
   },
   body2: {
+    color: palette.text_colors.neutral_675,
+    fontWeight: 400,
     fontStyle: "normal",
-    fontSize: '14px',
-    letterSpacing: '0px',
-    lineHeight: '22px'
+    fontSize: "14px",
+    lineHeight: "16px",
   },
   button: {
-    fontSize: '12px',
+    fontStyle: "normal",
     fontWeight: 500,
-    lineHeight: '16px',
-    letterSpacing: '0px',
-    textTransform: 'none'
+    fontSize: "12px",
+    lineHeight: "16px",
+    textTransform: "none",
   },
   caption: {
     fontWeight: 600,
-    fontStyle: 'normal',
-    fontSize: '12px',
-    letterSpacing: '0px',
-    lineHeight: '20px'
+    fontStyle: "normal",
+    fontSize: "14px",
+    lineHeight: "17px",
   },
   overline: {
-    fontSize: '10px',
-    letterSpacing: '0px',
-    lineHeight: '16px',
-    fontStyle: 'normal',
-    textTransform: 'none'
-  }
+    fontSize: "10px",
+    letterSpacing: "0px",
+    lineHeight: "16px",
+    fontStyle: "normal",
+    textTransform: "none",
+  },
 };

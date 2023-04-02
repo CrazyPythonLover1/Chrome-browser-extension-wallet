@@ -25,7 +25,7 @@ function Header() {
         justifyContent: "space-between",
         alignItems: "center",
         color: theme.palette.text_colors.primary_550,
-        padding: "12px 16px",
+        padding: "8px 16px",
         borderBottom: `1px solid ${theme.palette.key_colors.primary_350}`,
       }}
     >

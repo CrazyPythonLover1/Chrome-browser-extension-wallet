@@ -4,6 +4,7 @@ import HomePage from "./pages/Home/index";
 import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material";
 import Footer from "./components/Footer";
+import SecurityPage from "./pages/Security";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -18,6 +19,7 @@ function AppContainer() {
     <Container>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/security" element={<SecurityPage />} />
       </Routes>
       <Footer />
     </Container>

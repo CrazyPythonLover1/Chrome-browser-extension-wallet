@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 
 const BUTTON_SIZE = {
   NORMAL: "normal",
@@ -100,9 +100,9 @@ const Button = (props) => {
     };
   } else if (variant === BUTTON_TYPE.GREY) {
     buttonType = {
-      color: "#787B8E",
-      background: "#ECECF5",
-      border: "none",
+      color: theme.palette.text_colors.neutral_800,
+      background: theme.palette.text_colors.neutral_0,
+      border: `1px solid ${theme.palette.text_colors.neutral_275}`,
     };
   }
   return (
@@ -126,10 +126,10 @@ const Button = (props) => {
           }}
         >
           {icon}
-          {label}
+          <Typography variant="button"> {label} </Typography>
         </div>
       ) : (
-        label
+        <Typography variant="button"> {label} </Typography>
       )}
     </ButtonWrapper>
   );
