@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material";
 import Footer from "./components/Footer";
 import SecurityPage from "./pages/Security";
+import TwoFA from "./pages/Security/TwoFA";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -20,6 +21,7 @@ function AppContainer() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/security" element={<SecurityPage />} />
+        <Route path="/2fa" element={<TwoFA />} />
       </Routes>
       <Footer />
     </Container>

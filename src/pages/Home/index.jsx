@@ -21,7 +21,7 @@ function HomePage() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setOpen(true);
-    }, 1000);
+    }, 100);
 
     return () => {
       clearTimeout(timeout);

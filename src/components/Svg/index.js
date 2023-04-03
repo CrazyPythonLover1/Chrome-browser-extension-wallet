@@ -6,3 +6,5 @@ export { default as NFTIcon } from "./Icons/NFT";
 export { default as ReceiveIcon } from "./Icons/Receive";
 export { default as SendIcon } from "./Icons/Send";
 export { default as SwapArrowsIcon } from "./Icons/SwapArrows";
+export { default as ChevronLeftIcon } from "./Icons/ChevronLeft";
+export { default as InfoIcon } from "./Icons/Info";
