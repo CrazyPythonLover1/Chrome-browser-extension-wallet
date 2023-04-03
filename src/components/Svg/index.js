@@ -8,3 +8,4 @@ export { default as SendIcon } from "./Icons/Send";
 export { default as SwapArrowsIcon } from "./Icons/SwapArrows";
 export { default as ChevronLeftIcon } from "./Icons/ChevronLeft";
 export { default as InfoIcon } from "./Icons/Info";
+export { default as TwoFAIcon } from "./Icons/TwoFA";

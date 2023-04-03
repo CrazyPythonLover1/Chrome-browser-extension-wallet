@@ -14,6 +14,7 @@ const BUTTON_TYPE = {
   REMOVE: "remove",
   SECONDARY: "secondary",
   GREY: "grey",
+  SECURITY: "security",
 };
 
 const ButtonWrapper = styled.button`
@@ -28,7 +29,8 @@ const ButtonWrapper = styled.button`
   background: ${(props) => props.background};
   border: ${(props) => props.border};
   color: ${(props) => props.color};
-  border-radius: 40px;
+  border-radius: ${(props) =>
+    props.borderRadius ? props.borderRadius : "40px"};
   cursor: pointer;
   font-family: "Helvetica Neue LT Pro";
   font-style: normal;
@@ -86,11 +88,12 @@ const Button = (props) => {
       background: "white",
       border: `1px solid ${theme.button.primary}`,
     };
-  } else if (variant === BUTTON_TYPE.TRANSPARENT) {
+  } else if (variant === BUTTON_TYPE.SECURITY) {
     buttonType = {
-      color: theme.button.primary,
-      background: "none",
-      border: `1px solid ${theme.button.primary}`,
+      color: theme.palette.text_colors.neutral_675,
+      background: theme.palette.text_colors.neutral_0,
+      border: `1px solid ${theme.palette.key_colors.primary_475}`,
+      borderRadius: "13px",
     };
   } else if (variant === BUTTON_TYPE.REMOVE) {
     buttonType = {
@@ -114,6 +117,7 @@ const Button = (props) => {
       color={buttonType.color}
       background={buttonType.background}
       border={buttonType.border}
+      borderRadius={buttonType.borderRadius}
       svgColor={buttonType.svgColor}
       {...props}
     >

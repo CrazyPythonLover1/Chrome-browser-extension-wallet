@@ -3,24 +3,45 @@ import Button from "../../components/Button";
 import NavigationHeader from "../../components/NavigationHeader";
 import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { TwoFAIcon } from "../../components/Svg";
 
 function SecurityPage() {
   const navigate = useNavigate();
   return (
     <>
       <NavigationHeader label="Security" info />
-      <Box sx={{ padding: "16px" }}>
-        <Typography>Guardians</Typography>
-        <Typography onClick={() => navigate("/2fa")}>
-          2 Factor Authentication
-        </Typography>
+      <Box sx={{ padding: "16px", position: "relative", height: "100%" }}>
+        <Button
+          size="normal"
+          variant="security"
+          height="60px"
+          label="Guardians"
+          // icon={<SendIcon width="19px" height="18px" />}
+          onClick={() => navigate("/2fa")}
+          style={{
+            marginBottom: "8px",
+          }}
+        />
+
+        <Button
+          size="normal"
+          variant="security"
+          height="60px"
+          label="2 Factor Authentication"
+          icon={<TwoFAIcon />}
+          onClick={() => navigate("/2fa")}
+        />
         <Button
           size="normal"
           variant="secondary"
-          height="44px"
           label="Close"
           // icon={<SendIcon width="19px" height="18px" />}
           onClick={() => console.log("Button clicked!")}
+          style={{
+            position: "absolute",
+            left: "0",
+            bottom: "25px",
+          }}
         />
       </Box>
     </>
