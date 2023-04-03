@@ -13,3 +13,4 @@ export { default as GuardiansIcon } from "./Icons/Guardians";
 export { default as LockIcon } from "./Icons/Lock";
 export { default as NetworkIcon } from "./Icons/Network";
 export { default as MetamaskIcon } from "./Icons/Metamask";
+export { default as LogoIcon } from "./Icons/Logo";

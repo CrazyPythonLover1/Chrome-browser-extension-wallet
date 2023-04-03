@@ -14,7 +14,7 @@ function SecurityPage() {
         sx={{
           padding: "16px",
           position: "relative",
-          height: "356px",
+          height: "372px",
         }}
       >
         <Button
