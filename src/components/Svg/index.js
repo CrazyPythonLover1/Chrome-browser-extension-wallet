@@ -9,3 +9,7 @@ export { default as SwapArrowsIcon } from "./Icons/SwapArrows";
 export { default as ChevronLeftIcon } from "./Icons/ChevronLeft";
 export { default as InfoIcon } from "./Icons/Info";
 export { default as TwoFAIcon } from "./Icons/TwoFA";
+export { default as GuardiansIcon } from "./Icons/Guardians";
+export { default as LockIcon } from "./Icons/Lock";
+export { default as NetworkIcon } from "./Icons/Network";
+export { default as MetamaskIcon } from "./Icons/Metamask";

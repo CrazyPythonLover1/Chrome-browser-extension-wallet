@@ -16,7 +16,7 @@ function NavigationHeader({ label, info }) {
         alignItems: "center",
         color: theme.palette.text_colors.primary_550,
         height: "48px",
-        padding: "8px 20px",
+        padding: "0px 20px",
         borderBottom: `1px solid ${theme.palette.key_colors.primary_350}`,
       }}
     >
@@ -26,6 +26,10 @@ function NavigationHeader({ label, info }) {
           width="7px"
           height="13px"
           onClick={() => navigate(-1)}
+          style={{
+            cursor: "pointer",
+            padding: "16px 16px 16px 4px",
+          }}
         />
       </Box>
       <Box>

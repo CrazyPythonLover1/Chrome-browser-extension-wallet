@@ -3,21 +3,27 @@ import Button from "../../components/Button";
 import NavigationHeader from "../../components/NavigationHeader";
 import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { TwoFAIcon } from "../../components/Svg";
+import { TwoFAIcon, GuardiansIcon } from "../../components/Svg";
 
 function SecurityPage() {
   const navigate = useNavigate();
   return (
     <>
-      <NavigationHeader label="Security" info />
-      <Box sx={{ padding: "16px", position: "relative", height: "100%" }}>
+      <NavigationHeader label="Security" />
+      <Box
+        sx={{
+          padding: "16px",
+          position: "relative",
+          height: "356px",
+        }}
+      >
         <Button
           size="normal"
           variant="security"
           height="60px"
           label="Guardians"
-          // icon={<SendIcon width="19px" height="18px" />}
-          onClick={() => navigate("/2fa")}
+          icon={<GuardiansIcon />}
+          onClick={() => navigate("/guardians")}
           style={{
             marginBottom: "8px",
           }}
@@ -35,12 +41,13 @@ function SecurityPage() {
           size="normal"
           variant="secondary"
           label="Close"
-          // icon={<SendIcon width="19px" height="18px" />}
-          onClick={() => console.log("Button clicked!")}
+          onClick={() => navigate(-1)}
           style={{
             position: "absolute",
             left: "0",
             bottom: "25px",
+            margin: "0px 16px",
+            width: "343px",
           }}
         />
       </Box>

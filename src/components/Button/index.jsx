@@ -17,8 +17,13 @@ const BUTTON_TYPE = {
   SECURITY: "security",
 };
 
+const Label = styled.p`
+  margin: 0;
+  font-family: "Helvetica Neue LT Pro";
+`;
+
 const ButtonWrapper = styled.button`
-  padding: ${(props) => (props.size === BUTTON_SIZE.NORMAL ? "0 30px" : "0")};
+  padding: ${(props) => (props.size === BUTTON_SIZE.NORMAL ? "0 16px" : "0")};
   width: ${(props) =>
     props.size === BUTTON_SIZE.FULL_WIDTH
       ? "100%"
@@ -62,6 +67,7 @@ const Button = (props) => {
     icon,
     onClick,
     isDisabled,
+    justifyContent,
   } = props;
   let buttonType = {
     color: theme.palette.text_colors.neutral_0,
@@ -125,15 +131,15 @@ const Button = (props) => {
         <div
           style={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: justifyContent ? justifyContent : "center",
             alignItems: "center",
           }}
         >
           {icon}
-          <Typography variant="button"> {label} </Typography>
+          <Label> {label} </Label>
         </div>
       ) : (
-        <Typography variant="button"> {label} </Typography>
+        <Label> {label} </Label>
       )}
     </ButtonWrapper>
   );
