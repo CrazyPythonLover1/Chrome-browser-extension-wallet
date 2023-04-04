@@ -43,10 +43,9 @@ export default {
     lineHeight: "20px",
   },
   subtitle1: {
-    color: palette.text.primary,
+    color: palette.text_colors.neutral_675,
     fontWeight: 500,
     fontSize: "14px",
-    letterSpacing: "-0.05px",
     lineHeight: "20px",
   },
   subtitle2: {

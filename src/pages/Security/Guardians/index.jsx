@@ -4,21 +4,27 @@ import NavigationHeader from "../../../components/NavigationHeader";
 import Button from "../../../components/Button";
 import { LockIcon, NetworkIcon, MetamaskIcon } from "../../../components/Svg";
 import { useTheme } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Guardians() {
   const theme = useTheme();
+  const navigate = useNavigate();
+
   const guardiansList = [
     {
       label: "Clutch Guardian",
       icon: <LockIcon />,
+      route: "/clutch_guardian",
     },
     {
       label: "Friends and Family",
       icon: <NetworkIcon />,
+      route: "/friends_and_family",
     },
     {
       label: "Other",
       icon: <MetamaskIcon />,
+      route: "/clutch_guardian",
     },
   ];
   return (
@@ -46,7 +52,7 @@ function Guardians() {
               label={item.label}
               justifyContent="left"
               icon={item.icon}
-              onClick={() => navigate("/guardians")}
+              onClick={() => navigate(item.route)}
               style={{
                 marginBottom: "8px",
                 fontSize: "16px",
