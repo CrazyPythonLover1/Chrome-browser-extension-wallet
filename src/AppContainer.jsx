@@ -11,6 +11,8 @@ import ClutchGuardian from "./pages/Security/Guardians/ClutchGuardian";
 import ClutchGuardianViewDetail from "./pages/Security/Guardians/ClutchGuardian/ClutchGuardianViewDetail";
 import FriendsAndFamily from "./pages/Security/Guardians/FriendsAndFamily";
 import AddGuardian from "./pages/Security/Guardians/FriendsAndFamily/AddGuardian";
+import Other from "./pages/Security/Guardians/Other";
+import Email from "./pages/Security/TwoFA/Email";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -35,7 +37,9 @@ function AppContainer() {
         />
         <Route path="/friends_and_family" element={<FriendsAndFamily />} />
         <Route path="/add_guardian" element={<AddGuardian />} />
-        {/* <Route path="/" element={<AddGuardian />} /> */}
+        <Route path="/other_guardian" element={<Other />} />
+        <Route path="/2fa_email" element={<Email />} />
+        {/* <Route path="/" element={<Email />} /> */}
       </Routes>
       <Footer />
     </Container>

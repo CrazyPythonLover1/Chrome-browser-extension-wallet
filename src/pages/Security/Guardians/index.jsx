@@ -24,7 +24,7 @@ function Guardians() {
     {
       label: "Other",
       icon: <MetamaskIcon />,
-      route: "/clutch_guardian",
+      route: "/other_guardian",
     },
   ];
   return (
