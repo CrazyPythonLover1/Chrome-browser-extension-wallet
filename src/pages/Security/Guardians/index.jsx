@@ -19,7 +19,7 @@ function Guardians() {
     {
       label: "Friends and Family",
       icon: <NetworkIcon />,
-      route: "/clutch_guardian",
+      route: "/friends_and_family",
     },
     {
       label: "Other",

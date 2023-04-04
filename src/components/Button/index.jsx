@@ -36,6 +36,7 @@ const ButtonWrapper = styled.button`
   color: ${(props) => props.color};
   border-radius: ${(props) =>
     props.borderRadius ? props.borderRadius : "40px"};
+  box-sizing: border-box;
   cursor: pointer;
   font-family: "Helvetica Neue LT Pro";
   font-style: normal;
