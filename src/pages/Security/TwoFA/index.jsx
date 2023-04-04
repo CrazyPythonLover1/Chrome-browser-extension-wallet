@@ -1,7 +1,11 @@
 import React from "react";
 import NavigationHeader from "../../../components/NavigationHeader";
 import { Box, Typography } from "@mui/material";
-import { MobileIcon, EmailIcon, GoogleAuthenticatorIcon } from "../../../components/Svg";
+import {
+  MobileIcon,
+  EmailIcon,
+  GoogleAuthenticatorIcon,
+} from "../../../components/Svg";
 import Button from "../../../components/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -28,14 +32,20 @@ function TwoFactorAuth() {
         >
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <MobileIcon width="15" height="24" />
-            <Typography sx={{marginLeft: "12px", fontWeight: "400"}}>Mobile</Typography>
-            <Typography sx={{marginLeft: "4px", fontSize: "12px", fontWeight: "400"}}>(+xxx xxxxxxx48)</Typography>
+            <Typography sx={{ marginLeft: "12px", fontWeight: "400" }}>
+              Mobile
+            </Typography>
+            <Typography
+              sx={{ marginLeft: "4px", fontSize: "12px", fontWeight: "400" }}
+            >
+              (+xxx xxxxxxx48)
+            </Typography>
           </Box>
           <Box>
             <Button
               variant="grey"
               label="Add"
-              onClick={() => navigate('/2fa_mobile')}
+              onClick={() => navigate("/2fa_mobile")}
             />
           </Box>
         </Box>
@@ -49,8 +59,14 @@ function TwoFactorAuth() {
         >
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <EmailIcon width="20" height="16" />
-            <Typography sx={{marginLeft: "12px", fontWeight: "400"}}>Email</Typography>
-            <Typography sx={{marginLeft: "4px", fontSize: "12px", fontWeight: "400"}}>(example@mail.com)</Typography>
+            <Typography sx={{ marginLeft: "12px", fontWeight: "400" }}>
+              Email
+            </Typography>
+            <Typography
+              sx={{ marginLeft: "4px", fontSize: "12px", fontWeight: "400" }}
+            >
+              (example@mail.com)
+            </Typography>
           </Box>
           <Box>
             <Button
@@ -69,8 +85,10 @@ function TwoFactorAuth() {
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <GoogleAuthenticatorIcon width="24" height="24"/>
-            <Typography sx={{marginLeft: "12px", fontWeight: "400"}}>Google Authenticator</Typography>
+            <GoogleAuthenticatorIcon width="24" height="24" />
+            <Typography sx={{ marginLeft: "12px", fontWeight: "400" }}>
+              Google Authenticator
+            </Typography>
           </Box>
           <Box>
             <Button
