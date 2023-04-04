@@ -14,6 +14,7 @@ export { default as LockIcon } from "./Icons/Lock";
 export { default as NetworkIcon } from "./Icons/Network";
 export { default as MetamaskIcon } from "./Icons/Metamask";
 export { default as LogoIcon } from "./Icons/Logo";
-export {default as MobileIcon} from "./Icons/Mobile.jsx"
-export {default as EmailIcon} from "./Icons/Email.jsx"
-export {default as GoogleAuthenticatorIcon} from "./Icons/GoogleAuthenticator.jsx"
+export { default as CompletedCheckIcon } from "./Icons/CompletedCheck";
+export { default as MobileIcon } from "./Icons/Mobile.jsx";
+export { default as EmailIcon } from "./Icons/Email.jsx";
+export { default as GoogleAuthenticatorIcon } from "./Icons/GoogleAuthenticator.jsx";

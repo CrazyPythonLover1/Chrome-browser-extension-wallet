@@ -1,38 +1,47 @@
 import React from "react";
 import "react-responsive-modal/styles.css";
 import styled from "@emotion/styled";
+import { Box, Typography } from "@mui/material";
+import Button from "../Button";
 
 const Modal = styled.div`
-  position: fixed;
-  bottom: -150vh;
   background-color: ${({ theme }) => theme.palette.text_colors.neutral_0};
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+
+  border-radius: 8px;
+  padding: 24px;
   box-sizing: border-box;
-  width: 100%;
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.15);
-  left: 0;
   z-index: 10;
-  transition: all 0.3s ease-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 338px !important;
+  height: 288px !important;
+
+  opacity: 0;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: none;
   &.show {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    bottom: 0;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    opacity: 1;
+    display: block;
   }
 `;
 
 const Overlay = styled.div`
-  background-color: rgba(0, 0, 0, 0.55);
-  top: 0;
-  bottom: 0;
+  background-color: rgba(217, 217, 217, 0.8);
+  top: 49px;
+  bottom: 56px;
   left: 0;
   right: 0;
   position: fixed;
-  display: none;
   z-index: 5;
+  opacity: 0;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: none;
   &.show {
+    opacity: 1;
     display: block;
   }
 `;
@@ -87,10 +96,16 @@ const RoundIcon = styled.div`
 
 const DialogPopup = (props) => {
   const {
-    isOpen,
-    onCloseModal,
+    open,
+    onClose,
+    handleProceed,
     closeOnOverlayClick,
     title,
+    description,
+    btn1,
+    btn1OnClick,
+    btn2,
+    btn2OnClick,
     showCloseIcon,
     roundIcon,
     children,
@@ -100,23 +115,57 @@ const DialogPopup = (props) => {
   return (
     <>
       <Modal
-        className={isOpen && "show"}
+        className={open && "show"}
         closeOnOverlayClick={closeOnOverlayClick}
         showCloseIcon={showCloseIcon}
       >
-        {title && (
-          <TitleHeader roundIcon={roundIcon}>
-            {roundIcon && <RoundIcon>{roundIcon}</RoundIcon>}
-            {title}
-            <CloseIcon alt="close" onClick={onCloseModal} />
-          </TitleHeader>
-        )}
-        <DivBody style={{ maxHeight: window.innerHeight * 0.6 }}>
-          <div>{children}</div>
-          <div>{footer && <DivFooter>{footer}</DivFooter>}</div>
-        </DivBody>
+        <Box
+          sx={{
+            height: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "column",
+          }}
+        >
+          <Box>
+            <Typography variant="h5" sx={{ marginTop: "18px" }}>
+              {title}
+            </Typography>
+            <Typography
+              variant="body2"
+              component="div"
+              sx={{ marginTop: "4px", lineHeight: "22px" }}
+            >
+              {description}
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "16px",
+              // marginTop: "16px",
+            }}
+          >
+            <Button
+              size="normal"
+              variant="grey"
+              label={btn1}
+              // icon={<ReceiveIcon width="19px" height="18px" />}
+              onClick={() => (btn1OnClick ? btn1OnClick() : onClose())}
+            />
+            <Button
+              size="normal"
+              variant="primary"
+              label={btn2}
+              // icon={<SendIcon width="19px" height="18px" />}
+              onClick={() => (btn2OnClick ? btn2OnClick() : handleProceed())}
+            />
+          </Box>
+        </Box>
       </Modal>
-      <Overlay className={isOpen ? "show" : ""} onClick={onCloseModal} />
+      <Overlay className={open ? "show" : ""} onClick={onClose} />
     </>
   );
 };

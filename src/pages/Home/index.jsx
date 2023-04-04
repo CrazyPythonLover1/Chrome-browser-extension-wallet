@@ -6,6 +6,8 @@ import Button from "../../components/Button";
 import Dialog from "./components/Dialog";
 import { ReceiveIcon, SendIcon } from "../../components/Svg";
 import TotalValue from "./components/TotalValue";
+import DialogPopup from "../../components/DialogPopup";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   padding: 16px;
@@ -13,9 +15,14 @@ const Container = styled.div`
 
 function HomePage() {
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleProceed = () => {
+    navigate("/security");
   };
 
   useEffect(() => {
@@ -60,7 +67,17 @@ function HomePage() {
           />
         </Box>
 
-        <Dialog open={open} onClose={handleClose} />
+        {/* <Dialog open={open} onClose={handleClose} /> */}
+        <DialogPopup
+          open={open}
+          onClose={handleClose}
+          handleProceed={handleProceed}
+          title="Secure your assets"
+          description="To protect your assets, we recommend setting up guardians and 2-factor
+          authentication."
+          btn1="Cancel"
+          btn2="Proceed"
+        />
       </Container>
     </Box>
   );

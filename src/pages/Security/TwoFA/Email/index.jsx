@@ -4,12 +4,22 @@ import Button from "../../../../components/Button";
 import { useNavigate } from "react-router-dom";
 import NavigationHeader from "../../../../components/NavigationHeader";
 import Input from "../../../../components/Input";
-import ModalCustom from "../../../../components/Modal";
+import DialogPopup from "../../../../components/DialogPopup";
+// import ModalCustom from "../../../../components/Modal";
 
 function Email() {
   const theme = useTheme();
   const navigate = useNavigate();
-  const [isOpen, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleProceed = () => {
+    navigate("/email_completed");
+  };
+
   return (
     <>
       <NavigationHeader label="2 Factor" info />
@@ -48,6 +58,16 @@ function Email() {
           onClick={() => setOpen(true)}
         />
       </Box>
+      <DialogPopup
+        open={open}
+        onClose={handleClose}
+        title="Confirm Email"
+        description="We just sent an email to example@gmail.com. Please follow the instructions to verify your address."
+        btn1="Close"
+        btn1OnClick={handleProceed}
+        btn2="Re-send emaiil"
+        btn2OnClick={handleClose}
+      />
     </>
   );
 }

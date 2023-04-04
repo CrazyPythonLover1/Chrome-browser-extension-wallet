@@ -28,10 +28,11 @@ function Mobile() {
             variant="body2"
             sx={{ lineHeight: "22px", marginTop: "4px", marginBottom: "14px" }}
           >
-            Insert your mobile phone number below to establish mobile authentication.
+            Insert your mobile phone number below to establish mobile
+            authentication.
           </Typography>
           <Typography variant="subtitle1" sx={{ marginBottom: "4px" }}>
-          Mobile
+            Mobile
           </Typography>
           <Input placeholder="Enter Mobile number" />
         </Box>
