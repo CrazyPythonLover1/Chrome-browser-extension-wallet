@@ -13,6 +13,7 @@ import FriendsAndFamily from "./pages/Security/Guardians/FriendsAndFamily";
 import AddGuardian from "./pages/Security/Guardians/FriendsAndFamily/AddGuardian";
 import Other from "./pages/Security/Guardians/Other";
 import Email from "./pages/Security/TwoFA/Email";
+import Mobile from "./pages/Security/TwoFA/Mobile";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -40,6 +41,9 @@ function AppContainer() {
         <Route path="/other_guardian" element={<Other />} />
         <Route path="/2fa_email" element={<Email />} />
         {/* <Route path="/" element={<Email />} /> */}
+
+        {/* <Route path="/" element={<mobile />} /> */}
+        <Route path="/2fa_mobile" element={<Mobile />} />
       </Routes>
       <Footer />
     </Container>

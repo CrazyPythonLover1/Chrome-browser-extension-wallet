@@ -3,8 +3,10 @@ import NavigationHeader from "../../../components/NavigationHeader";
 import { Box, Typography } from "@mui/material";
 import { MobileIcon, EmailIcon, GoogleAuthenticatorIcon } from "../../../components/Svg";
 import Button from "../../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 function TwoFactorAuth() {
+  const navigate = useNavigate();
   return (
     <>
       <NavigationHeader label="2 Factor" info />
@@ -33,7 +35,7 @@ function TwoFactorAuth() {
             <Button
               variant="grey"
               label="Add"
-              onClick={() => console.log("Button clicked!")}
+              onClick={() => navigate('/2fa_mobile')}
             />
           </Box>
         </Box>
@@ -54,7 +56,7 @@ function TwoFactorAuth() {
             <Button
               variant="grey"
               label="Add"
-              onClick={() => console.log("Button clicked!")}
+              onClick={() => navigate("/2fa_email")}
             />
           </Box>
         </Box>
