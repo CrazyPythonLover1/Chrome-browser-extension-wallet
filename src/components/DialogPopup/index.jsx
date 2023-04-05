@@ -1,5 +1,4 @@
 import React from "react";
-import "react-responsive-modal/styles.css";
 import styled from "@emotion/styled";
 import { Box, Typography } from "@mui/material";
 import Button from "../Button";
