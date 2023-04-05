@@ -4,12 +4,23 @@ import Button from "../../../../components/Button";
 import { useNavigate } from "react-router-dom";
 import NavigationHeader from "../../../../components/NavigationHeader";
 import Input from "../../../../components/Input";
+import DialogPopup from "../../../../components/DialogPopup";
+import { QRIcon } from "../../../../components/Svg";
 // import ModalCustom from "../../../../components/Modal";
 
-function Mobile() {
+function GoogleAuth() {
   const theme = useTheme();
   const navigate = useNavigate();
-  const [isOpen, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleProceed = () => {
+    navigate("/google_auth_code");
+  };
+
   return (
     <>
       <NavigationHeader label="2 Factor" info />
@@ -23,7 +34,7 @@ function Mobile() {
         }}
       >
         <Box>
-          <Typography variant="h5">Mobile</Typography>
+          <Typography variant="h5">Google Authenticator</Typography>
           <Typography
             variant="body2"
             sx={{
@@ -33,29 +44,41 @@ function Mobile() {
               marginBottom: "14px",
             }}
           >
-            Insert your mobile phone number below to establish mobile
-            authentication.
+            Open the Google Authenticator app and scan this QR code,
           </Typography>
-          <Typography variant="subtitle1" sx={{ marginBottom: "4px" }}>
-            Mobile
+          <Box
+            sx={{ display: "flex", justifyContent: "center", margin: "24px 0" }}
+          >
+            <QRIcon width="136px" height="136px" />
+          </Box>
+          <Typography
+            variant="body2"
+            sx={{
+              color: theme.palette.text_colors.neutral_625,
+              lineHeight: "22px",
+              marginTop: "4px",
+              marginBottom: "14px",
+            }}
+          >
+            Alternatively, you can enter the follow code manually: 06N6 YMJQ
+            Q4SX P6BS TQ2C LFYA BOFA
           </Typography>
-          <Input placeholder="Enter Mobile number" />
         </Box>
 
         <Button
           size="fullWidth"
           variant="primary"
-          label="Confirm"
+          label="Next"
           style={{
             marginBottom: "9px",
             // fontSize: "14px",
             // color: theme.palette.text_colors.primary_475,
           }}
-          onClick={() => setOpen(true)}
+          onClick={() => handleProceed()}
         />
       </Box>
     </>
   );
 }
 
-export default Mobile;
+export default GoogleAuth;

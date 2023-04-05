@@ -4,12 +4,29 @@ import Button from "../../../../components/Button";
 import { useNavigate } from "react-router-dom";
 import NavigationHeader from "../../../../components/NavigationHeader";
 import Input from "../../../../components/Input";
-// import ModalCustom from "../../../../components/Modal";
+import DialogPopup from "../../../../components/DialogPopup";
 
-function Mobile() {
+function GoogleAuthCode() {
   const theme = useTheme();
   const navigate = useNavigate();
-  const [isOpen, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleVerify = () => {
+    if (true) {
+      setOpen(true);
+    } else {
+      navigate("/email_completed");
+    }
+  };
+
+  const handleProceed = () => {
+    navigate("/email_completed");
+  };
+
   return (
     <>
       <NavigationHeader label="2 Factor" info />
@@ -23,7 +40,7 @@ function Mobile() {
         }}
       >
         <Box>
-          <Typography variant="h5">Mobile</Typography>
+          <Typography variant="h5">Google Authenticator</Typography>
           <Typography
             variant="body2"
             sx={{
@@ -33,29 +50,35 @@ function Mobile() {
               marginBottom: "14px",
             }}
           >
-            Insert your mobile phone number below to establish mobile
-            authentication.
+            Verify your Google Authenticator code below.
           </Typography>
           <Typography variant="subtitle1" sx={{ marginBottom: "4px" }}>
-            Mobile
+            6-digit code
           </Typography>
-          <Input placeholder="Enter Mobile number" />
+          <Input placeholder="Enter 6-digit code" />
         </Box>
 
         <Button
           size="fullWidth"
           variant="primary"
-          label="Confirm"
+          label="Verify"
           style={{
             marginBottom: "9px",
-            // fontSize: "14px",
-            // color: theme.palette.text_colors.primary_475,
           }}
-          onClick={() => setOpen(true)}
+          onClick={() => handleVerify()}
         />
       </Box>
+      <DialogPopup
+        open={open}
+        onClose={handleClose}
+        title="Are you sure?"
+        description="Are you sure you want to delete your Google Authentication method? Doing so will disable this 2-factor authentication method."
+        btn1="Cancel"
+        btn2="Confirm"
+        btn2OnClick={handleProceed}
+      />
     </>
   );
 }
 
-export default Mobile;
+export default GoogleAuthCode;

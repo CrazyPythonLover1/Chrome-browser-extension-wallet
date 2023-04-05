@@ -18,3 +18,4 @@ export { default as CompletedCheckIcon } from "./Icons/CompletedCheck";
 export { default as MobileIcon } from "./Icons/Mobile.jsx";
 export { default as EmailIcon } from "./Icons/Email.jsx";
 export { default as GoogleAuthenticatorIcon } from "./Icons/GoogleAuthenticator.jsx";
+export { default as QRIcon } from "./Icons/QR.jsx";

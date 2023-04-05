@@ -36,7 +36,12 @@ function Email() {
           <Typography variant="h5">Email</Typography>
           <Typography
             variant="body2"
-            sx={{ lineHeight: "22px", marginTop: "4px", marginBottom: "14px" }}
+            sx={{
+              color: theme.palette.text_colors.neutral_625,
+              lineHeight: "22px",
+              marginTop: "4px",
+              marginBottom: "14px",
+            }}
           >
             Insert your email below to establish email authentication.
           </Typography>

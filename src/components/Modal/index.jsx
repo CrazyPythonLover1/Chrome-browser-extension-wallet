@@ -1,4 +1,5 @@
 import React from "react";
+import "react-responsive-modal/styles.css";
 import styled from "@emotion/styled";
 
 const Modal = styled.div`

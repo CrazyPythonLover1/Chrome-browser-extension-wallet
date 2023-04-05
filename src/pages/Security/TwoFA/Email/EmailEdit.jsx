@@ -4,12 +4,22 @@ import Button from "../../../../components/Button";
 import { useNavigate } from "react-router-dom";
 import NavigationHeader from "../../../../components/NavigationHeader";
 import Input from "../../../../components/Input";
+import DialogPopup from "../../../../components/DialogPopup";
 // import ModalCustom from "../../../../components/Modal";
 
-function Mobile() {
+function EmailEdit() {
   const theme = useTheme();
   const navigate = useNavigate();
-  const [isOpen, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleProceed = () => {
+    navigate("/email_completed");
+  };
+
   return (
     <>
       <NavigationHeader label="2 Factor" info />
@@ -23,8 +33,8 @@ function Mobile() {
         }}
       >
         <Box>
-          <Typography variant="h5">Mobile</Typography>
-          <Typography
+          <Typography variant="h5">Change Email</Typography>
+          {/* <Typography
             variant="body2"
             sx={{
               color: theme.palette.text_colors.neutral_625,
@@ -33,13 +43,23 @@ function Mobile() {
               marginBottom: "14px",
             }}
           >
-            Insert your mobile phone number below to establish mobile
-            authentication.
+            Insert your email below to establish email authentication.
+          </Typography> */}
+          <Typography
+            variant="subtitle1"
+            sx={{ marginBottom: "4px", marginTop: "14px" }}
+          >
+            Current Email
           </Typography>
-          <Typography variant="subtitle1" sx={{ marginBottom: "4px" }}>
-            Mobile
+          <Input placeholder="Enter email address" />
+
+          <Typography
+            variant="subtitle1"
+            sx={{ marginBottom: "4px", marginTop: "14px" }}
+          >
+            New Email
           </Typography>
-          <Input placeholder="Enter Mobile number" />
+          <Input placeholder="Enter email address" />
         </Box>
 
         <Button
@@ -54,8 +74,18 @@ function Mobile() {
           onClick={() => setOpen(true)}
         />
       </Box>
+      <DialogPopup
+        open={open}
+        onClose={handleClose}
+        title="Confirm Email"
+        description="We just sent an email to example@gmail.com. Please follow the instructions to verify your address."
+        btn1="Close"
+        btn1OnClick={handleProceed}
+        btn2="Re-send emaiil"
+        btn2OnClick={handleClose}
+      />
     </>
   );
 }
 
-export default Mobile;
+export default EmailEdit;

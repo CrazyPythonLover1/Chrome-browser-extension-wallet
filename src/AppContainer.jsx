@@ -15,6 +15,10 @@ import Other from "./pages/Security/Guardians/Other";
 import Email from "./pages/Security/TwoFA/Email";
 import EmailCompleted from "./pages/Security/TwoFA/Email/EmailCompleted";
 import Mobile from "./pages/Security/TwoFA/Mobile";
+import GoogleAuth from "./pages/Security/TwoFA/GoogleAuth";
+import GoogleAuthCode from "./pages/Security/TwoFA/GoogleAuth/GoogleAuthCode";
+import EmailEdit from "./pages/Security/TwoFA/Email/EmailEdit";
+import SendPage from "./pages/Send";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -42,9 +46,16 @@ function AppContainer() {
         <Route path="/other_guardian" element={<Other />} />
 
         <Route path="/2fa_mobile" element={<Mobile />} />
+
         <Route path="/2fa_email" element={<Email />} />
         <Route path="/email_completed" element={<EmailCompleted />} />
-        {/* <Route path="/" element={<EmailCompleted />} /> */}
+        <Route path="/email_edit" element={<EmailEdit />} />
+
+        <Route path="/2fa_google_auth" element={<GoogleAuth />} />
+        <Route path="/google_auth_code" element={<GoogleAuthCode />} />
+
+        {/* <Route path="/" element={<EmailEdit />} /> */}
+        <Route path="/send" element={<SendPage />} />
       </Routes>
       <Footer />
     </Container>

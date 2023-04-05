@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import { useTheme } from "@mui/material";
 import styled from "@emotion/styled";
@@ -44,10 +45,11 @@ const ActionBarElement = styled.div`
 
 function Header() {
   const theme = useTheme();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("home");
 
   const setIconHomeActive = () => {
-    // history.push("/");
+    navigate("/");
     setActiveTab(ACTIVE_TAB.HOME);
   };
   const setIconNftActive = () => {
@@ -55,13 +57,40 @@ function Header() {
     setActiveTab(ACTIVE_TAB.NFT);
   };
   const setIconSendActive = () => {
-    // history.push("/setting");
+    navigate("/send");
     setActiveTab(ACTIVE_TAB.SEND);
   };
   const setIconSwapActive = () => {
     // history.push("/setting");
     setActiveTab(ACTIVE_TAB.SWAP);
   };
+
+  const handleTabIcon = (Icon) => {
+    return <Icon width="20px" height="20px" display="block" />;
+  };
+
+  const tabNames = [
+    {
+      tabName: ACTIVE_TAB.HOME,
+      icon: handleTabIcon(HomeIcon),
+      handleClick: setIconHomeActive,
+    },
+    {
+      tabName: ACTIVE_TAB.NFT,
+      icon: handleTabIcon(NFTIcon),
+      handleClick: setIconNftActive,
+    },
+    {
+      tabName: ACTIVE_TAB.SEND,
+      icon: handleTabIcon(SendIcon),
+      handleClick: setIconSendActive,
+    },
+    {
+      tabName: ACTIVE_TAB.SWAP,
+      icon: handleTabIcon(SwapArrowsIcon),
+      handleClick: setIconSwapActive,
+    },
+  ];
 
   return (
     <Box
@@ -80,50 +109,15 @@ function Header() {
           borderTop: `1px solid ${theme.palette.key_colors.primary_350}`,
         }}
       >
-        <ActionBarElement
-          className={activeTab === ACTIVE_TAB.HOME && "active"}
-          onClick={setIconHomeActive}
-        >
-          <Box sx={{ marginBottom: "6px" }}>
-            <HomeIcon size="" width="20px" height="20px" display="block" />
-          </Box>
-          <span></span>
-        </ActionBarElement>
-
-        <ActionBarElement
-          className={activeTab === ACTIVE_TAB.NFT && "active"}
-          onClick={setIconNftActive}
-        >
-          <Box sx={{ marginBottom: "6px" }}>
-            <NFTIcon size="" width="20px" height="20px" display="block" />
-          </Box>
-          <span></span>
-        </ActionBarElement>
-
-        <ActionBarElement
-          className={activeTab === ACTIVE_TAB.SEND && "active"}
-          onClick={setIconSendActive}
-        >
-          <Box sx={{ marginBottom: "6px" }}>
-            <SendIcon size="" width="20px" height="20px" display="block" />
-          </Box>
-          <span></span>
-        </ActionBarElement>
-
-        <ActionBarElement
-          className={activeTab === ACTIVE_TAB.SWAP && "active"}
-          onClick={setIconSwapActive}
-        >
-          <Box sx={{ marginBottom: "6px" }}>
-            <SwapArrowsIcon
-              size=""
-              width="20px"
-              height="20px"
-              display="block"
-            />
-          </Box>
-          <span></span>
-        </ActionBarElement>
+        {tabNames.map((item) => (
+          <ActionBarElement
+            className={activeTab === item.tabName && "active"}
+            onClick={() => item.handleClick()}
+          >
+            <Box sx={{ marginBottom: "6px" }}>{item.icon}</Box>
+            <span></span>
+          </ActionBarElement>
+        ))}
       </DivFlex>
     </Box>
   );
