@@ -2,7 +2,7 @@
 
 The \_\_BrandName browser extension wallet is an Ethereum smart contract wallet with social recovery via the guardianship concept and is designed work in the Chrome browser.
 
-## Supported Platforms
+<!-- ## Supported Platforms
 
 The \_\_BrandName browser extension wallet is designed to work with the Chrome browser and is tested and supported on the following platforms:
 
@@ -10,7 +10,7 @@ The \_\_BrandName browser extension wallet is designed to work with the Chrome b
 | :------: | :------------: |
 |  macOS   | 108.0.5359.124 |
 | Windows  | 108.0.5359.124 |
-|  Linux   | 108.0.5359.124 |
+|  Linux   | 108.0.5359.124 | -->
 
 ### Supported Blockchains
 
