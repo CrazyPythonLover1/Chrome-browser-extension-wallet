@@ -9,7 +9,7 @@ import Input from "../../../../components/Input";
 function Mobile() {
   const theme = useTheme();
   const navigate = useNavigate();
-  
+  const [isOpen, setOpen] = useState(false);
   return (
     <>
       <NavigationHeader label="2 Factor" info />
@@ -45,7 +45,7 @@ function Mobile() {
         <Button
           size="fullWidth"
           variant="primary"
-          label="Verify"
+          label="Confirm"
           style={{
             marginBottom: "9px",
             // fontSize: "14px",

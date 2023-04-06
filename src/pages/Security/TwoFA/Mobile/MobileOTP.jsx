@@ -9,12 +9,10 @@ function MobileOTP() {
   const theme = useTheme();
   const navigate = useNavigate();
 
-  
-
   return (
-  <>
-    <NavigationHeader label="2 Factor" info />
-    <Box
+    <>
+      <NavigationHeader label="2 Factor" info />
+      <Box
         sx={{
           padding: "16px",
           height: "372px",
@@ -36,7 +34,16 @@ function MobileOTP() {
           >
             Verify your mobile number by inserting the code below.
           </Typography>
-          <Typography variant="subtitle1" sx={{ marginBottom: "4px", fontWeight:'500', fontSize:"14px", width: "343px",color: theme.palette.text_colors.neutral_625 }}>
+          <Typography
+            variant="subtitle1"
+            sx={{
+              marginBottom: "4px",
+              fontWeight: "500",
+              fontSize: "14px",
+              width: "343px",
+              color: theme.palette.text_colors.neutral_625,
+            }}
+          >
             6-digit code
           </Typography>
           <Input placeholder="Enter 6-digit code" />
@@ -49,10 +56,10 @@ function MobileOTP() {
           style={{
             marginBottom: "9px",
           }}
-          onClick={() => navigate("/email_completed")}           
+          onClick={() => navigate("/email_completed")}
         />
       </Box>
-  </>
+    </>
   );
 }
 

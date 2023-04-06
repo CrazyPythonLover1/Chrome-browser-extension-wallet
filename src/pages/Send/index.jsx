@@ -1,7 +1,33 @@
 import React from "react";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+import { useTheme } from "@mui/material";
 
-function SendPage() {
-  return <div>SendPage</div>;
+import Header from "../../components/Header";
+import CheckAssets from "./CheckAssets";
+import Button from "../../components/Button";
+import SendPage from "./SendPage";
+
+const Container = styled("div")(({ theme }) => ({
+  width: "375px",
+  minHeight: "508px",
+  // color: theme.palette.background_colors.purple_25
+}));
+
+function Send() {
+  const theme = useTheme();
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <Header page="send" />
+
+      <Routes>
+        <Route path="home" element={<SendPage />} />
+        <Route path="check_assets" element={<CheckAssets />} />
+      </Routes>
+    </>
+  );
 }
 
-export default SendPage;
+export default Send;

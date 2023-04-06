@@ -16,10 +16,11 @@ const AccountList = styled("div")(({ theme }) => ({
   flexWrap: 0,
 }));
 
-function Header() {
+function Header(props) {
   const theme = useTheme();
   return (
     <Box
+      key={props.page}
       sx={{
         display: "flex",
         justifyContent: "space-between",

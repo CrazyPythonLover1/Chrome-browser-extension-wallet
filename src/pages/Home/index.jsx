@@ -37,7 +37,7 @@ function HomePage() {
 
   return (
     <Box>
-      <Header />
+      <Header page="homepage" />
       <Container>
         <TotalValue />
         <Box

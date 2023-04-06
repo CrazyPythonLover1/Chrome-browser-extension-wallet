@@ -57,7 +57,7 @@ function Header() {
     setActiveTab(ACTIVE_TAB.NFT);
   };
   const setIconSendActive = () => {
-    navigate("/send");
+    navigate("/send/home");
     setActiveTab(ACTIVE_TAB.SEND);
   };
   const setIconSwapActive = () => {
@@ -111,6 +111,7 @@ function Header() {
       >
         {tabNames.map((item) => (
           <ActionBarElement
+            key={item.tabName}
             className={activeTab === item.tabName && "active"}
             onClick={() => item.handleClick()}
           >
