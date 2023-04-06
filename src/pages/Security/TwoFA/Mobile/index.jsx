@@ -9,7 +9,7 @@ import Input from "../../../../components/Input";
 function Mobile() {
   const theme = useTheme();
   const navigate = useNavigate();
-  const [isOpen, setOpen] = useState(false);
+  
   return (
     <>
       <NavigationHeader label="2 Factor" info />
@@ -45,13 +45,13 @@ function Mobile() {
         <Button
           size="fullWidth"
           variant="primary"
-          label="Confirm"
+          label="Verify"
           style={{
             marginBottom: "9px",
             // fontSize: "14px",
             // color: theme.palette.text_colors.primary_475,
           }}
-          onClick={() => setOpen(true)}
+          onClick={() => navigate("/2famobile_otp")}
         />
       </Box>
     </>

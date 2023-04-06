@@ -19,6 +19,7 @@ import GoogleAuth from "./pages/Security/TwoFA/GoogleAuth";
 import GoogleAuthCode from "./pages/Security/TwoFA/GoogleAuth/GoogleAuthCode";
 import EmailEdit from "./pages/Security/TwoFA/Email/EmailEdit";
 import SendPage from "./pages/Send";
+import MobileOTP from "./pages/Security/TwoFA/Mobile/MobileOTP";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -46,6 +47,8 @@ function AppContainer() {
         <Route path="/other_guardian" element={<Other />} />
 
         <Route path="/2fa_mobile" element={<Mobile />} />
+        <Route path="/2famobile_otp" element={<MobileOTP />} />
+
 
         <Route path="/2fa_email" element={<Email />} />
         <Route path="/email_completed" element={<EmailCompleted />} />
