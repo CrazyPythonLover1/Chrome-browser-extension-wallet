@@ -29,7 +29,6 @@ function CheckAssets() {
       <Box
         sx={{
           padding: "16px",
-          height: "372px",
           display: "flex",
           justifyContent: "space-between",
           flexDirection: "column",
