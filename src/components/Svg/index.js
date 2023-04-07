@@ -23,3 +23,5 @@ export { default as QRIcon } from "./Icons/QR.jsx";
 export { default as EthIcon } from "./Tokens/Eth";
 export { default as UniIcon } from "./Tokens/Uni.jsx";
 export { default as closeIcon } from "./Icons/Close.jsx";
+export { default as settingsIcon } from "./Icons/Settings.jsx";
+export { default as informationIcon } from "./Icons/Information.jsx";
