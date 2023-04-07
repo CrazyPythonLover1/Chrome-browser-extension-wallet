@@ -21,4 +21,5 @@ export { default as EmailIcon } from "./Icons/Email.jsx";
 export { default as GoogleAuthenticatorIcon } from "./Icons/GoogleAuthenticator.jsx";
 export { default as QRIcon } from "./Icons/QR.jsx";
 export { default as EthIcon } from "./Tokens/Eth";
-export { default as Uni } from "./Tokens/Uni.jsx";
+export { default as UniIcon } from "./Tokens/Uni.jsx";
+export { default as closeIcon } from "./Icons/Close.jsx";

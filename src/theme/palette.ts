@@ -1,7 +1,7 @@
 import { colors } from "@mui/material";
 
 const neutral_interactions_800 = "#090B27";
-const neutral_800 = "#272950";
+const neutral_800 = "#272950"; 
 const neutral_675 = "#575983";
 const neutral_625 = "#6D6F96";
 const neutral_500 = "#A1A2BD";
@@ -20,7 +20,7 @@ const primary_pressed_550 = "#434BB6";
 const primary_pressed_475 = "#5F67DD";
 const primary_pressed_50 = "#EBECFB";
 const semantic_450 = "#108F65";
-const semantic_350 = "#E04369";
+const semantic_350 = "#E04369"; 
 const semantic_50 = "#F6FCFA";
 const white = "#FFFFFF";
 const black = "#000000";
