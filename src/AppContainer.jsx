@@ -20,6 +20,9 @@ import GoogleAuth from "./pages/Security/TwoFA/GoogleAuth";
 import GoogleAuthCode from "./pages/Security/TwoFA/GoogleAuth/GoogleAuthCode";
 import EmailEdit from "./pages/Security/TwoFA/Email/EmailEdit";
 import SendPage from "./pages/Send";
+import Swap from "./pages/Swap";
+import ReviewSwap from "./pages/Swap/ReviewSwap";
+import Transaction from "./pages/Send/Transaction";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -58,6 +61,11 @@ function AppContainer() {
 
         {/* send pages  */}
         <Route path="send/*" element={<SendPage />} />
+        <Route path="/send/transaction" element={<Transaction />} />
+
+        {/* swap pages  */}
+        <Route path="swap/*" element={<Swap />} />
+        <Route path="/review_swap" element={<ReviewSwap />} />
         {/* <Route path="/check_assets" element={<CheckAssets />} /> */}
         {/* <Route path="/" element={<EmailEdit />} /> */}
       </Routes>

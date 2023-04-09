@@ -18,7 +18,7 @@ function SecurityPage() {
         }}
       >
         <Button
-          size="normal"
+          size="fullWidth"
           variant="security"
           height="60px"
           label="Guardians"
@@ -30,7 +30,7 @@ function SecurityPage() {
         />
 
         <Button
-          size="normal"
+          size="fullWidth"
           variant="security"
           height="60px"
           label="2 Factor Authentication"
@@ -38,7 +38,7 @@ function SecurityPage() {
           onClick={() => navigate("/2fa")}
         />
         <Button
-          size="normal"
+          size="fullWidth"
           variant="secondary"
           label="Close"
           onClick={() => navigate(-1)}

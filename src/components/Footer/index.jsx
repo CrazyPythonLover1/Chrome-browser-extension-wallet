@@ -61,7 +61,7 @@ function Header() {
     setActiveTab(ACTIVE_TAB.SEND);
   };
   const setIconSwapActive = () => {
-    // history.push("/setting");
+    navigate("/swap/home");
     setActiveTab(ACTIVE_TAB.SWAP);
   };
 

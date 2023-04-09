@@ -17,7 +17,6 @@ function Transaction() {
   return (
     <>
       <NavigationHeader label="Send" info />
-
       <Box
         sx={{
           padding: "16px",
@@ -30,7 +29,6 @@ function Transaction() {
         {/* top box */}
         <Box
           sx={{
-            // color: theme.palette.text_colors.primary_550,
             background: theme.palette.text_colors.neutral_0,
             border: `1.56px solid ${theme.palette.key_colors.primary_475}`,
             svgColor: theme.palette.text_colors.primary_550,

@@ -50,7 +50,7 @@ function HomePage() {
           }}
         >
           <Button
-            size="normal"
+            size="fullWidth"
             variant="primary"
             height="44px"
             label="Deposit"
@@ -58,7 +58,7 @@ function HomePage() {
             onClick={() => console.log("Button clicked!")}
           />
           <Button
-            size="normal"
+            size="fullWidth"
             variant="primary"
             height="44px"
             label="Send"

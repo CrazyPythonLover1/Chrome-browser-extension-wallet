@@ -23,13 +23,14 @@ const Label = styled.p`
 `;
 
 const ButtonWrapper = styled.button`
-  padding: ${(props) => (props.size === BUTTON_SIZE.NORMAL ? "0 16px" : "0")};
+  padding: ${(props) =>
+    props.size === BUTTON_SIZE.NORMAL ? "0 16px" : "0 16px"};
   width: ${(props) =>
     props.size === BUTTON_SIZE.FULL_WIDTH
       ? "100%"
       : props.width
       ? props.width
-      : "100%"};
+      : "auto"};
   height: ${(props) => (props.height ? props.height : "36px")};
   background: ${(props) => props.background};
   border: ${(props) => props.border};
@@ -91,9 +92,9 @@ const Button = (props) => {
     };
   } else if (variant === BUTTON_TYPE.DISABLE) {
     buttonType = {
-      color: theme.button.primary,
-      background: "white",
-      border: `1px solid ${theme.button.primary}`,
+      color: theme.palette.key_colors_interactions.primary_pressed_550,
+      background: theme.palette.key_colors.primary_50,
+      border: `1px solid ${theme.palette.key_colors.primary_350}`,
     };
   } else if (variant === BUTTON_TYPE.SECURITY) {
     buttonType = {

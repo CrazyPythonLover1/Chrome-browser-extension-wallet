@@ -10,12 +10,17 @@ const InputField = styled.input`
   background: ${({ theme }) => theme.palette.text_colors.neutral_0};
   border: 1px solid ${({ theme }) => theme.palette.text_colors.neutral_275};
   border-radius: 10px;
+  caret-color: ${({ theme }) => theme.palette.text_colors.primary_550};
   ::placeholder {
     color: ${({ theme }) => theme.palette.text_colors.neutral_675};
     font-family: "Lato";
     font-size: ${({ theme }) => theme.typography.button.fontSize};
     font-weight: ${({ theme }) => theme.typography.button.fontWeight};
     line-height: ${({ theme }) => theme.typography.body1.lineHeight};
+  }
+  &:focus {
+    outline: none;
+    border-color: ${({ theme }) => theme.palette.border_colors.primary_350};
   }
 `;
 

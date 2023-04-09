@@ -46,7 +46,7 @@ function Guardians() {
           {guardiansList.map((item) => (
             <Button
               key={item.label}
-              size="normal"
+              size="fullWidth"
               variant="security"
               height="56px"
               label={item.label}

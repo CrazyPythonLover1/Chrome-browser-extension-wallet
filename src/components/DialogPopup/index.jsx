@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Box, Typography } from "@mui/material";
 import Button from "../Button";
+import { InfoIcon } from "../Svg";
 
 const Modal = styled.div`
   background-color: ${({ theme }) => theme.palette.text_colors.neutral_0};
@@ -106,7 +107,7 @@ const DialogPopup = (props) => {
     btn2,
     btn2OnClick,
     showCloseIcon,
-    roundIcon,
+    infoIcon,
     children,
     footer,
   } = props;
@@ -127,6 +128,7 @@ const DialogPopup = (props) => {
           }}
         >
           <Box>
+            {infoIcon && <InfoIcon width="58px" height="58px" />}
             <Typography variant="h5" sx={{ marginTop: "18px" }}>
               {title}
             </Typography>
@@ -148,14 +150,14 @@ const DialogPopup = (props) => {
             }}
           >
             <Button
-              size="normal"
+              size="fullWidth"
               variant="grey"
               label={btn1}
               // icon={<ReceiveIcon width="19px" height="18px" />}
               onClick={() => (btn1OnClick ? btn1OnClick() : onClose())}
             />
             <Button
-              size="normal"
+              size="fullWidth"
               variant="primary"
               label={btn2}
               // icon={<SendIcon width="19px" height="18px" />}
