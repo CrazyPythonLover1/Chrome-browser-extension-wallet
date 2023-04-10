@@ -274,9 +274,10 @@ function Transaction() {
               </Typography>
 
               <SettingsIcon
-                style={{ paddingLeft: "4px" }}
+                style={{ paddingLeft: "4px", cursor: "pointer" }}
                 height="24px"
                 width="24px"
+                onClick={() => navigate("/send/transactionSpeed")}
               />
             </Box>
             <Typography
