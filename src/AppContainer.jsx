@@ -24,6 +24,7 @@ import Swap from "./pages/Swap";
 import ReviewSwap from "./pages/Swap/ReviewSwap";
 import Transaction from "./pages/Send/Transaction";
 import TransctionSpeed from "./pages/Send/Transaction/TransctionSpeed/TransctionSpeed";
+import AdvancedOption from "./pages/Send/Transaction/AdvancedOption/AdvancedOption";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -64,6 +65,7 @@ function AppContainer() {
         <Route path="send/*" element={<SendPage />} />
         <Route path="/send/transaction" element={<Transaction />} />
         <Route path="/send/transactionSpeed" element={<TransctionSpeed />} />
+        <Route path="/send/AdvanceOption" element={<AdvancedOption />} />
 
         {/* swap pages  */}
         <Route path="swap/*" element={<Swap />} />

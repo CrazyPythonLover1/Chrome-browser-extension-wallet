@@ -130,7 +130,7 @@ const TransctionSpeed = () => {
 
           <Box sx={{display:'flex', justifyContent:"center" , alignItems:"center", marginBottom:"100px"}}>
             <AdvanceSettingText>Advanced Settings</AdvanceSettingText>
-             <SettingsIcon Width="24px" height="24px"/>
+             <SettingsIcon style={{cursor: "pointer"}} Width="24px" height="24px" onClick={() => navigate("/send/AdvanceOption")}/>
           </Box>
 
         {/* save button */}
