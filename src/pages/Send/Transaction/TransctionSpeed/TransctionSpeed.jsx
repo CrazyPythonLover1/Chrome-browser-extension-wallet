@@ -21,7 +21,7 @@ const TopBox = styled.div`
   width: 343px;
   box-sizing: border-box;
   border-radius: 12px;
-  padding: 16px; 
+  padding: 16px;
 `;
 const Title = styled.div`
   font-family: Lato;
@@ -35,69 +35,66 @@ const Title = styled.div`
 `;
 
 const SubTitleLeft = styled.div`
-font-family: Lato;
-width: 56px;
-height: 24px;
-line-height: 24px;
-font-family: Lato;
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-color: #6D6F96;
+  font-family: Lato;
+  width: 56px;
+  height: 24px;
+  line-height: 24px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6d6f96;
 `;
 
 const SubTitleRight = styled.div`
-font-family: Lato;
-line-height: 22px;
-width: 131px;
-height: 22px;
-font-family: Lato;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-color: #575983;
+  font-family: Lato;
+  line-height: 22px;
+  width: 131px;
+  height: 22px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #575983;
 `;
 
 const Switcher = styled.div`
-box-sizing: border-box;
-width: 276px;
-height: 32px;
-border: 1px solid #ECECEE;
-border-radius: 49px;
-display:flex;
-justify-content: space-around;
-align-items: center;
-margin: 0 auto;
+  box-sizing: border-box;
+  width: 276px;
+  height: 32px;
+  border: 1px solid #ececee;
+  border-radius: 49px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
 `;
 
 const SwitcherText = styled.div`
-font-family: Helvetica Neue LT Pro;
-line-height: 20px;
-width: 32px;
-height: 20px;
-line-height: 20px;
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-color: ${({ index }) => (index === 0 ? "#6871EA" : "#6D6F96")};
+  font-family: Helvetica Neue LT Pro;
+  line-height: 20px;
+  width: 32px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: ${({ index }) => (index === 0 ? "#6871EA" : "#6D6F96")};
 `;
 
 const AdvanceSettingText = styled.div`
-width: 131px;
-height: 22px;
-font-family: 'Lato';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 22px;
-margin-right: 4px;
-color: #6871EA;
+  height: 22px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  margin-right: 4px;
+  color: #6871ea;
 `;
 
-
-
 const TransctionSpeed = () => {
-  const theme = useTheme(); 
+  const theme = useTheme();
   const navigate = useNavigate();
   return (
     <>
@@ -112,26 +109,36 @@ const TransctionSpeed = () => {
           flexDirection: "column",
         }}
       >
-       
         <TopBox>
           <Title sx={{}}>0.0031 ETH $4.52</Title>
-          <Box sx={{display:"flex", alignItems:"center"}}>
-          <SubTitleLeft>Max Fee:</SubTitleLeft>
-          <SubTitleRight>0.0045 ETH $5.23</SubTitleRight>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <SubTitleLeft>Max Fee:</SubTitleLeft>
+            <SubTitleRight>0.0045 ETH $5.23</SubTitleRight>
           </Box>
         </TopBox>
 
         <Switcher>
-            <SwitcherText index={0}>Slow</SwitcherText>
-            <SwitcherText index={1}>Medium</SwitcherText>
-            <SwitcherText index={2}>Fast</SwitcherText>
-          </Switcher>
+          <SwitcherText index={0}>Slow</SwitcherText>
+          <SwitcherText index={1}>Medium</SwitcherText>
+          <SwitcherText index={2}>Fast</SwitcherText>
+        </Switcher>
 
-
-          <Box sx={{display:'flex', justifyContent:"center" , alignItems:"center", marginBottom:"100px"}}>
-            <AdvanceSettingText>Advanced Settings</AdvanceSettingText>
-             <SettingsIcon style={{cursor: "pointer"}} Width="24px" height="24px" onClick={() => navigate("/send/AdvanceOption")}/>
-          </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: "100px",
+          }}
+        >
+          <AdvanceSettingText>Advanced Settings</AdvanceSettingText>
+          <SettingsIcon
+            style={{ cursor: "pointer" }}
+            Width="24px"
+            height="24px"
+            onClick={() => navigate("/send/AdvanceOption")}
+          />
+        </Box>
 
         {/* save button */}
         <Button
@@ -141,7 +148,6 @@ const TransctionSpeed = () => {
           style={{ marginBottom: "9px" }}
           onClick={() => navigate("/")}
         />
-        
       </Box>
     </>
   );
