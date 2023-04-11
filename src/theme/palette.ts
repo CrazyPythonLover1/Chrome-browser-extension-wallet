@@ -235,7 +235,7 @@ export default {
   warning: {
     contrastText: white,
     dark: colors.orange[900],
-    main: colors.orange[600],
+    main: "#F5A300",
     light: colors.orange[400],
   },
   error: {

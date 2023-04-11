@@ -83,6 +83,7 @@ const SwitcherText = styled.div`
 `;
 
 const AdvanceSettingText = styled.div`
+  width: 131px;
   height: 22px;
   font-family: "Lato";
   font-style: normal;
@@ -136,7 +137,7 @@ const TransctionSpeed = () => {
             style={{ cursor: "pointer" }}
             Width="24px"
             height="24px"
-            onClick={() => navigate("/send/AdvanceOption")}
+            onClick={() => navigate("/send/advance_option")}
           />
         </Box>
 

@@ -9,8 +9,8 @@ import styled from "@emotion/styled";
 const AdvancedOption = () => {
   return (
     <>
-    <NavigationHeader label="Advanced Options" info />
-      <h1>hello</h1>
+      <NavigationHeader label="Advanced Options" info />
+      <h1>Advanced Settings</h1>
     </>
   );
 };

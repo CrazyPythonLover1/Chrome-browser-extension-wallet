@@ -96,10 +96,10 @@ const SwapDetails = styled.div`
     }
   }
 
-  div:nth-child(-n + 2) {
+  div:nth-of-type(-n + 2) {
     margin-bottom: 12px;
   }
-  div:nth-child(3) {
+  div:nth-of-type(3) {
     margin-bottom: 0px !important;
     div {
       margin-bottom: 0px;
@@ -121,7 +121,7 @@ const SwapDetails = styled.div`
       }
     }
   }
-  div:nth-child(n + 2):nth-child(-n + 3) {
+  div:nth-of-type(n + 2):nth-of-type(-n + 3) {
     svg {
       margin-bottom: -5px;
       margin-left: 8px;

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import Button from "../../../components/Button";
 import { DivFlex } from "../../../components";
 import { EthIcon, InfoIcon } from "../../../components/Svg";
@@ -9,11 +9,11 @@ import DialogPopup from "../../../components/DialogPopup";
 import NavigationHeader from "../../../components/NavigationHeader";
 
 const Label = styled.label`
-  color: ${({ theme }) => theme.palette.text_colors.neutral_500};
+  color: ${({ theme }) => theme.palette.text_colors.neutral_625};
   font-family: "Lato";
-  font-size: ${({ theme }) => theme.typography.subtitle1.fontSize};
-  font-weight: ${({ theme }) => theme.typography.subtitle1.fontWeight};
-  line-height: ${({ theme }) => theme.typography.subtitle1.lineHeight};
+  font-size: ${({ theme }) => theme.typography.subtitle2.fontSize};
+  font-weight: ${({ theme }) => theme.typography.subtitle2.fontWeight};
+  line-height: ${({ theme }) => theme.typography.subtitle2.lineHeight};
 `;
 
 const SwapDetails = styled.div`
@@ -27,7 +27,7 @@ const SwapDetails = styled.div`
     justify-content: space-between;
 
     p:first-child {
-      color: ${({ theme }) => theme.palette.text_colors.neutral_625};
+      line-height: 24px;
     }
   }
 
@@ -39,13 +39,14 @@ const SwapDetails = styled.div`
 `;
 
 function ReviewSwap() {
-  const [openSlippage, setOpenSlippage] = React.useState(false);
-  const [openPriceImpact, setOpenPriceImpact] = React.useState(false);
+  const theme = useTheme();
+  const [openSwapRateModal, setOpenSwapRateModal] = React.useState(false);
+  const [openGasFeeModal, setOpenGasFeeModal] = React.useState(false);
   const navigate = useNavigate();
 
   const handleClose = () => {
-    setOpenSlippage(false);
-    setOpenPriceImpact(false);
+    setOpenGasFeeModal(false);
+    setOpenSwapRateModal(false);
   };
 
   return (
@@ -62,7 +63,14 @@ function ReviewSwap() {
         <Box>
           <SwapDetails>
             <Box sx={{ marginBottom: "25px" }}>
-              <Typography variant="body1">You Pay</Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: theme.palette.text_colors.neutral_800,
+                }}
+              >
+                You Pay
+              </Typography>
               <Box
                 sx={{
                   flexDirection: "column",
@@ -70,29 +78,55 @@ function ReviewSwap() {
                 }}
               >
                 <DivFlex justifyContent="space-between" alignItems="center">
-                  <EthIcon onClick={() => setOpenPriceImpact(true)} />
-                  <Typography>0.85 ETH</Typography>
+                  <EthIcon onClick={() => setOpenSwapRateModal(true)} />
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: theme.palette.text_colors.neutral_800,
+                    }}
+                  >
+                    0.85 ETH
+                  </Typography>
                 </DivFlex>
                 <Label>Max 0.0123 ETH</Label>
               </Box>
             </Box>
             <Box>
-              <Typography variant="body1">You Receive</Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: theme.palette.text_colors.neutral_800,
+                }}
+              >
+                You Receive
+              </Typography>
 
               <DivFlex justifyContent="space-between" alignItems="center">
-                <EthIcon onClick={() => setOpenPriceImpact(true)} />
-                <Typography>172.23 AXIE</Typography>
+                <EthIcon onClick={() => setOpenSwapRateModal(true)} />
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: theme.palette.text_colors.neutral_800,
+                  }}
+                >
+                  172.23 AXIE
+                </Typography>
               </DivFlex>
             </Box>
           </SwapDetails>
 
           <SwapDetails>
             <Box sx={{ marginBottom: "25px" }}>
-              <Typography variant="body2">
+              <Typography
+                variant="body2"
+                sx={{
+                  color: theme.palette.text_colors.neutral_625,
+                }}
+              >
                 Swap Rate
                 <InfoIcon
                   className="info"
-                  onClick={() => setOpenPriceImpact(true)}
+                  onClick={() => setOpenSwapRateModal(true)}
                 />
               </Typography>
               <Box
@@ -102,21 +136,42 @@ function ReviewSwap() {
                 }}
               >
                 <DivFlex justifyContent="space-between" alignItems="center">
-                  {/* <EthIcon onClick={() => setOpenPriceImpact(true)} /> */}
-                  <Typography>1 ETH = 202 AXIE</Typography>
+                  {/* <EthIcon onClick={() => setOpenSwapRateModal(true)} /> */}
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: theme.palette.text_colors.neutral_675,
+                      fontWeight: 600,
+                    }}
+                  >
+                    1 ETH = 202 AXIE
+                  </Typography>
                 </DivFlex>
-                <Label style={{ display: "block", textAlign: "right" }}>
+                <Label
+                  style={{
+                    display: "block",
+                    textAlign: "right",
+                    color: theme.palette.text_colors.primary_550,
+                    cursor: "pointer",
+                  }}
+                  onClick={() => navigate("/swap/quotes")}
+                >
                   See more quotes
                 </Label>
               </Box>
             </Box>
 
             <Box sx={{ marginBottom: "" }}>
-              <Typography variant="body2">
+              <Typography
+                variant="body2"
+                sx={{
+                  color: theme.palette.text_colors.neutral_625,
+                }}
+              >
                 Estimated Gas Fees
                 <InfoIcon
                   className="info"
-                  onClick={() => setOpenPriceImpact(true)}
+                  onClick={() => setOpenGasFeeModal(true)}
                 />
               </Typography>
               <Box
@@ -132,10 +187,25 @@ function ReviewSwap() {
                   justifyContent="space-between"
                   alignItems="center"
                 >
-                  {/* <EthIcon onClick={() => setOpenPriceImpact(true)} /> */}
-                  <Typography>0.0031 ETH $4.52</Typography>
+                  {/* <EthIcon onClick={() => setOpenSwapRateModal(true)} /> */}
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: theme.palette.text_colors.neutral_675,
+                      fontWeight: 600,
+                    }}
+                  >
+                    0.0031 ETH $4.52
+                  </Typography>
                 </DivFlex>
-                <Label style={{ display: "block", textAlign: "right" }}>
+                <Label
+                  style={{
+                    display: "block",
+                    textAlign: "right",
+                    fontSize: "14px",
+                    color: theme.palette.text_colors.neutral_675,
+                  }}
+                >
                   Max fee: $7.82
                 </Label>
               </Box>
@@ -151,23 +221,23 @@ function ReviewSwap() {
         />
       </DivFlex>
       <DialogPopup
-        open={openPriceImpact}
+        open={openSwapRateModal}
         onClose={handleClose}
         // handleProceed={handleProceed}
         // title="Secure your assets"
         infoIcon
-        description="Price impact is the influence of user's individual trade over the market price of an underlying asset pair."
+        description="The swap rate is the rate at which your exchange occurs. We obtain the best possible price through multiple liquidity providers."
         btn1="Close"
         btn2="Learn more"
       />
 
       <DialogPopup
-        open={openSlippage}
+        open={openGasFeeModal}
         onClose={handleClose}
         // handleProceed={handleProceed}
         // title="Secure your assets"
         infoIcon
-        description="Slippage is the difference between the expected price of an order and the price it executes at. If slippage exceeds your set limit, your swap will cancel."
+        description="Gas fees are blockchain transaction fees paid to network validators. This fee is an estimate, and may change at the time of settlement."
         btn1="Close"
         btn2="Learn more"
       />
