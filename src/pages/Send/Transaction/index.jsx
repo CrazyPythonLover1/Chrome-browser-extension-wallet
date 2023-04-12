@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import NavigationHeader from "../../../components/NavigationHeader";
 import Button from "../../../components/Button";
@@ -11,6 +11,7 @@ import { useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { DivFlex } from "../../../components";
 import styled from "@emotion/styled";
+import DialogPopup from "../../../components/DialogPopup";
 
 const DetailBox = styled.div`
   background: ${({ theme }) => theme.palette.text_colors.neutral_0};
@@ -39,6 +40,15 @@ const BoldText675 = styled.p`
 function Transaction() {
   const theme = useTheme();
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleProceed = () => {
+    navigate("/");
+  };
 
   return (
     <>
@@ -82,7 +92,12 @@ function Transaction() {
                 >
                   Total
                 </Typography>
-                <InformationIcon width="19.4px" height="19.4px" />
+                <InformationIcon
+                  style={{ cursor: "pointer" }}
+                  width="19.4px"
+                  height="19.4px"
+                  onClick={() => setOpen(true)}
+                />
               </DivFlex>
               {/* left bottom text */}
               <Typography
@@ -273,6 +288,24 @@ function Transaction() {
           onClick={() => navigate("/")}
         />
       </DivFlex>
+
+      {/* dialogue popup */}
+      <DialogPopup
+        open={open}
+        onClose={handleClose}
+        title={
+          <InformationIcon
+            width="48px"
+            height="48px"
+            style={{ marginBottom: "30px" }}
+          />
+        }
+        description="The total amount reflects the exact amount that will be sent to the receiving wallet. This includes Clutch’s fee, and network fees."
+        btn1="Close"
+        btn1OnClick={handleProceed}
+        btn2="Learn more"
+        btn2OnClick={handleClose}
+      />
     </>
   );
 }
