@@ -31,7 +31,7 @@ const Title = styled.div`
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  color: #575983;
+  color: ${({ theme }) => theme.palette.key_colors.neutral_675};
 `;
 
 const SubTitleLeft = styled.div`
@@ -43,7 +43,7 @@ const SubTitleLeft = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  color: #6d6f96;
+  color: ${({ theme }) => theme.palette.key_colors.neutral_625};
 `;
 
 const SubTitleRight = styled.div`
@@ -55,7 +55,7 @@ const SubTitleRight = styled.div`
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  color: #575983;
+  color: ${({ theme }) => theme.palette.key_colors.neutral_675};
 `;
 
 const Switcher = styled.div`
@@ -79,7 +79,10 @@ const SwitcherText = styled.div`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  color: ${({ index }) => (index === 0 ? "#6871EA" : "#6D6F96")};
+  color: ${({ index, theme }) =>
+    index === 0
+      ? theme.palette.text_colors.primary_550
+      : theme.palette.text_colors.neutral_625};
 `;
 
 const AdvanceSettingText = styled.div`
@@ -91,7 +94,7 @@ const AdvanceSettingText = styled.div`
   font-size: 16px;
   line-height: 22px;
   margin-right: 4px;
-  color: #6871ea;
+  color: ${({ theme }) => theme.palette.text_colors.primary_550};
 `;
 
 const TransctionSpeed = () => {

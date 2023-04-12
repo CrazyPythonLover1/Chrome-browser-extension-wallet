@@ -33,6 +33,7 @@ const SelectToken = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-basis: 50%;
+  cursor: pointer;
 
   p {
     color: ${({ theme }) => theme.palette.text_colors.neutral_800};
@@ -69,7 +70,7 @@ function SendPage() {
             <InputField>
               <Input placeholder="Amount" />
             </InputField>
-            <SelectToken>
+            <SelectToken onClick={() => navigate("/check_assets")}>
               <EthIcon />
               <Typography variant="body1"> ETH </Typography>
               <ChevronDownIcon />

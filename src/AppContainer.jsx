@@ -26,6 +26,7 @@ import Transaction from "./pages/Send/Transaction";
 import Quotes from "./pages/Swap/Quotes";
 import TransctionSpeed from "./pages/Send/Transaction/TransctionSpeed";
 import AdvancedOption from "./pages/Send/Transaction/AdvancedOption";
+import CheckAssets from "./pages/CheckAssets";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -40,6 +41,7 @@ function AppContainer() {
     <Container>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/check_assets" element={<CheckAssets />} />
         <Route path="/security" element={<SecurityPage />} />
         <Route path="/2fa" element={<TwoFA />} />
         <Route path="/guardians" element={<Guardians />} />
