@@ -47,14 +47,13 @@ const SubTitleLeft = styled.div`
 `;
 
 const SubTitleRight = styled.div`
-  font-family: Lato;
-  line-height: 22px;
   width: 131px;
   height: 22px;
   font-family: Lato;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
+  line-height: 22px;
   color: ${({ theme }) => theme.palette.key_colors.neutral_675};
 `;
 
@@ -71,10 +70,9 @@ const Switcher = styled.div`
 `;
 
 const SwitcherText = styled.div`
-  font-family: Helvetica Neue LT Pro;
-  line-height: 20px;
   width: 32px;
   height: 20px;
+  font-family: Helvetica Neue LT Pro;
   line-height: 20px;
   font-style: normal;
   font-weight: 500;

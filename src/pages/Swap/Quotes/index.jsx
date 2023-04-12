@@ -6,10 +6,12 @@ import { LockIcon, NetworkIcon, MetamaskIcon } from "../../../components/Svg";
 import { useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { DivFlex } from "../../../components";
+import DialogPopup from "../../../components/DialogPopup";
 
 function Quotes() {
   const theme = useTheme();
   const navigate = useNavigate();
+  const [openInfoModal, setOpenInfoModal] = React.useState(false);
 
   const quoteList = [
     {
@@ -28,9 +30,23 @@ function Quotes() {
     },
   ];
 
+  const handleNavigate = (btnText) => {
+    if (btnText.toLowerCase() === "agg") {
+      navigate("/swap/inside_quote");
+    }
+  };
+
+  const handleClose = () => {
+    setOpenInfoModal(false);
+  };
+
+  const infoHandler = () => {
+    setOpenInfoModal(true);
+  };
+
   return (
     <>
-      <NavigationHeader label="Quotes" info />
+      <NavigationHeader label="Quotes" info infoHandler={infoHandler} />
       <DivFlex
         justifyContent="space-between"
         flexDirection="column"
@@ -52,7 +68,6 @@ function Quotes() {
               justifyContent="space-between"
               padding="18px 16px"
               style={{
-                // height: "60px",
                 marginBottom: "8px",
                 fontSize: "16px",
                 lineHeight: "24px",
@@ -87,27 +102,12 @@ function Quotes() {
                     : index === 1 && theme.palette.warning.main
                 }`}
                 label={item.btnText}
+                onClick={() => handleNavigate(item.btnText)}
               />
             </DivFlex>
           ))}
         </Box>
 
-        {/* <Button
-          key={item.label}
-          size="fullWidth"
-          variant="security"
-          height="56px"
-          label={item.label}
-          justifyContent="left"
-          icon={item.icon}
-          onClick={() => navigate(item.route)}
-          style={{
-            marginBottom: "8px",
-            fontSize: "16px",
-            lineHeight: "24px",
-            color: theme.palette.key_colors.primary_550,
-          }}
-        /> */}
         <Button
           size="fullWidth"
           variant="secondary"
@@ -115,6 +115,14 @@ function Quotes() {
           onClick={() => navigate("/swap")}
         />
       </DivFlex>
+      <DialogPopup
+        open={openInfoModal}
+        onClose={handleClose}
+        infoIcon
+        description="We receive quotes from multiple liquidity providers to ensure you’re getting the best price possilbe."
+        btn1="Close"
+        btn2="Learn more"
+      />
     </>
   );
 }

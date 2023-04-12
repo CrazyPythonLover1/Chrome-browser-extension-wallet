@@ -3,7 +3,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { ChevronLeftIcon, InfoIcon, CloseIcon } from "../Svg";
 import { useNavigate } from "react-router-dom";
 
-function NavigationHeader({ label, info, close }) {
+function NavigationHeader({ label, info, close, infoHandler }) {
   const theme = useTheme();
 
   const navigate = useNavigate();
@@ -46,7 +46,10 @@ function NavigationHeader({ label, info, close }) {
       </Box>
       <Box>
         {info ? (
-          <InfoIcon />
+          <InfoIcon
+            onClick={() => infoHandler()}
+            style={{ cursor: "pointer", padding: "10px" }}
+          />
         ) : (
           close && (
             <CloseIcon

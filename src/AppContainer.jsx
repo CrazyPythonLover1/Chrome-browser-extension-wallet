@@ -27,6 +27,7 @@ import Quotes from "./pages/Swap/Quotes";
 import TransctionSpeed from "./pages/Send/Transaction/TransctionSpeed";
 import AdvancedOption from "./pages/Send/Transaction/AdvancedOption";
 import CheckAssets from "./pages/CheckAssets";
+import InsideQuote from "./pages/Swap/Quotes/InsideQuote";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -74,6 +75,7 @@ function AppContainer() {
         <Route path="swap/*" element={<Swap />} />
         <Route path="/review_swap" element={<ReviewSwap />} />
         <Route path="/swap/quotes" element={<Quotes />} />
+        <Route path="/swap/inside_quote" element={<InsideQuote />} />
         {/* <Route path="/check_assets" element={<CheckAssets />} /> */}
         {/* <Route path="/" element={<EmailEdit />} /> */}
       </Routes>

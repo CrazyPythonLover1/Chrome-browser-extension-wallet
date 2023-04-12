@@ -1,9 +1,11 @@
 import React from "react";
 import { useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import NavigationHeader from "../../../../components/NavigationHeader";
 import styled from "@emotion/styled";
+import { DivFlex } from "../../../../components";
+import Button from "../../../../components/Button";
 
 const InputBox = styled.div`
   background: ${({ theme }) => theme.palette.text_colors.neutral_0};
@@ -16,12 +18,11 @@ const InputBox = styled.div`
   gap: 8px;
   width: 343px;
   height: 40px;
-  border-radius: 10px; 
+  border-radius: 10px;
   margin-bottom: 14px;
 `;
 
-
-const Title = styled.div`
+const Label = styled.div`
   height: 20px;
   font-family: "Lato";
   font-style: normal;
@@ -29,6 +30,7 @@ const Title = styled.div`
   font-size: 14px;
   line-height: 20px;
   color: ${({ theme }) => theme.palette.text_colors.neutral_675};
+  margin-bottom: 5px;
 `;
 
 const InsideText = styled.div`
@@ -41,25 +43,23 @@ const InsideText = styled.div`
   color: ${({ theme }) => theme.palette.text_colors.neutral_675};
 `;
 
-
-
 const AdvancedOption = () => {
   const theme = useTheme();
   const navigate = useNavigate();
 
   const advancedBoxData = [
     {
-      title: "Gas Limit",
+      label: "Gas Limit",
       leftext: 21000,
       rightText: "",
     },
     {
-      title: "Max Priority Fee (GWEI)",
+      label: "Max Priority Fee (GWEI)",
       leftext: 1.5,
       rightText: "$0.04 USD",
     },
     {
-      title: "Max Fee (GWEI)",
+      label: "Max Fee (GWEI)",
       leftext: 21.34,
       rightText: "$0.01 USD",
     },
@@ -68,19 +68,18 @@ const AdvancedOption = () => {
   return (
     <>
       <NavigationHeader label="Advanced Options" info />
-      <Box
-        sx={{
-          padding: "16px",
-          display: "flex",
+      <DivFlex
+        padding="16px"
+        justifyContent="space-between"
+        flexDirection="column"
+        style={{
           height: "372px",
-          justifyContent: "space-between",
-          flexDirection: "column",
         }}
       >
         <Box>
           {advancedBoxData.map((data, index) => (
             <React.Fragment key={index}>
-              <Title>{data.title}</Title>
+              <Label>{data.label}</Label>
               <InputBox>
                 <InsideText>{data.leftext}</InsideText>
                 <InsideText>{data.rightText}</InsideText>
@@ -88,7 +87,15 @@ const AdvancedOption = () => {
             </React.Fragment>
           ))}
         </Box>
-      </Box>
+
+        <Button
+          size="fullWidth"
+          variant="secondary"
+          label="Save"
+          style={{ marginBottom: "9px" }}
+          onClick={() => navigate("/")}
+        />
+      </DivFlex>
     </>
   );
 };
