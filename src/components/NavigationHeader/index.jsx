@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
-import { ChevronLeftIcon, InfoIcon } from "../Svg";
+import { ChevronLeftIcon, InfoIcon, CloseIcon } from "../Svg";
 import { useNavigate } from "react-router-dom";
 
-function NavigationHeader({ label, info }) {
+function NavigationHeader({ label, info, close }) {
   const theme = useTheme();
 
   const navigate = useNavigate();
@@ -21,16 +21,18 @@ function NavigationHeader({ label, info }) {
       }}
     >
       <Box>
-        <ChevronLeftIcon
-          display="block"
-          width="7px"
-          height="13px"
-          onClick={() => navigate(-1)}
-          style={{
-            cursor: "pointer",
-            padding: "16px 16px 16px 4px",
-          }}
-        />
+        {!close && (
+          <ChevronLeftIcon
+            display="block"
+            width="7px"
+            height="13px"
+            onClick={() => navigate(-1)}
+            style={{
+              cursor: "pointer",
+              padding: "16px 16px 16px 4px",
+            }}
+          />
+        )}
       </Box>
       <Box>
         <Typography
@@ -42,7 +44,20 @@ function NavigationHeader({ label, info }) {
           {label}
         </Typography>
       </Box>
-      <Box>{info && <InfoIcon />}</Box>
+      <Box>
+        {info ? (
+          <InfoIcon />
+        ) : (
+          close && (
+            <CloseIcon
+              width="14px"
+              height="14px"
+              onClick={() => navigate(-1)}
+              style={{ cursor: "pointer", padding: "10px" }}
+            />
+          )
+        )}
+      </Box>
     </Box>
   );
 }
