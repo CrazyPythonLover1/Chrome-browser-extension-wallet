@@ -6,6 +6,7 @@ import NavigationHeader from "../../../../components/NavigationHeader";
 import styled from "@emotion/styled";
 import { DivFlex } from "../../../../components";
 import Button from "../../../../components/Button";
+import DialogPopup from "../../../../components/DialogPopup";
 
 const InputBox = styled.div`
   background: ${({ theme }) => theme.palette.text_colors.neutral_0};
@@ -46,6 +47,15 @@ const InsideText = styled.div`
 const AdvancedOption = () => {
   const theme = useTheme();
   const navigate = useNavigate();
+  const [openInfoModal, setOpenInfoModal] = React.useState(false);
+
+  const handleClose = () => {
+    setOpenInfoModal(false);
+  };
+
+  const infoHandler = () => {
+    setOpenInfoModal(true);
+  };
 
   const advancedBoxData = [
     {
@@ -65,9 +75,11 @@ const AdvancedOption = () => {
     },
   ];
 
+  
+
   return (
     <>
-      <NavigationHeader label="Advanced Options" info />
+      <NavigationHeader label="Advanced Options" info infoHandler={infoHandler} />
       <DivFlex
         padding="16px"
         justifyContent="space-between"
@@ -96,6 +108,14 @@ const AdvancedOption = () => {
           onClick={() => navigate("/")}
         />
       </DivFlex>
+      <DialogPopup
+        open={openInfoModal}
+        onClose={handleClose}
+        infoIcon
+        description="Advanced options allow you to customize fees associated with your transaction, so you can speed it up, or slow it down."
+        btn1="Close"
+        btn2="Learn more"
+      />
     </>
   );
 };

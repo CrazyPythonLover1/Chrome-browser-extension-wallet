@@ -293,9 +293,9 @@ function Transaction() {
         <Button
           size="normal"
           variant="secondary"
-          label="Close"
+          label="Save"
           style={{ marginBottom: "9px" }}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/send_Completed")}
         />
       </DivFlex>
 

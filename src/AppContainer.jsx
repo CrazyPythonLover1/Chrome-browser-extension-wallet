@@ -28,6 +28,7 @@ import TransctionSpeed from "./pages/Send/Transaction/TransctionSpeed";
 import AdvancedOption from "./pages/Send/Transaction/AdvancedOption";
 import CheckAssets from "./pages/CheckAssets";
 import InsideQuote from "./pages/Swap/Quotes/InsideQuote";
+import SendCompleted from "./pages/Send/SendCompleted";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -70,6 +71,8 @@ function AppContainer() {
         <Route path="/send/transaction" element={<Transaction />} />
         <Route path="/send/transaction_speed" element={<TransctionSpeed />} />
         <Route path="/send/advance_option" element={<AdvancedOption />} />
+        <Route path="/send_Completed" element={<SendCompleted />} />
+
 
         {/* swap pages  */}
         <Route path="swap/*" element={<Swap />} />
