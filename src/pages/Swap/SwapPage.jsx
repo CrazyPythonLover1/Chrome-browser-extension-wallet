@@ -92,7 +92,7 @@ const SwapDetails = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    p:first-child {
+    p:first-of-type {
       color: ${({ theme }) => theme.palette.text_colors.neutral_625};
     }
   }

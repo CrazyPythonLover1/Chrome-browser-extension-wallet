@@ -26,7 +26,7 @@ const SwapDetails = styled.div`
     display: flex;
     justify-content: space-between;
 
-    p:first-child {
+    p:first-of-type {
       line-height: 24px;
     }
   }

@@ -24,11 +24,12 @@ import Swap from "./pages/Swap";
 import ReviewSwap from "./pages/Swap/ReviewSwap";
 import Transaction from "./pages/Send/Transaction";
 import Quotes from "./pages/Swap/Quotes";
-import TransctionSpeed from "./pages/Send/Transaction/TransctionSpeed";
+import TransactionSpeed from "./pages/Send/Transaction/TransactionSpeed";
 import AdvancedOption from "./pages/Send/Transaction/AdvancedOption";
+import SendCompleted from "./pages/Send/SendCompleted";
 import CheckAssets from "./pages/CheckAssets";
 import InsideQuote from "./pages/Swap/Quotes/InsideQuote";
-import SendCompleted from "./pages/Send/SendCompleted";
+import Menu from "./pages/Menu";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -69,10 +70,9 @@ function AppContainer() {
         {/* send pages  */}
         <Route path="send/*" element={<SendPage />} />
         <Route path="/send/transaction" element={<Transaction />} />
-        <Route path="/send/transaction_speed" element={<TransctionSpeed />} />
+        <Route path="/send/transaction_speed" element={<TransactionSpeed />} />
         <Route path="/send/advance_option" element={<AdvancedOption />} />
         <Route path="/send_Completed" element={<SendCompleted />} />
-
 
         {/* swap pages  */}
         <Route path="swap/*" element={<Swap />} />
@@ -80,7 +80,7 @@ function AppContainer() {
         <Route path="/swap/quotes" element={<Quotes />} />
         <Route path="/swap/inside_quote" element={<InsideQuote />} />
         {/* <Route path="/check_assets" element={<CheckAssets />} /> */}
-        {/* <Route path="/" element={<EmailEdit />} /> */}
+        <Route path="menu/*" element={<Menu />} />
       </Routes>
       <Footer />
     </Container>

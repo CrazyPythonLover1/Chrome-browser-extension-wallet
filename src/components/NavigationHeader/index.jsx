@@ -56,7 +56,7 @@ function NavigationHeader({ label, info, close, infoHandler }) {
               width="14px"
               height="14px"
               onClick={() => navigate(-1)}
-              style={{ cursor: "pointer", padding: "10px" }}
+              style={{ cursor: "pointer", padding: "10px 0px 10px 10px" }}
             />
           )
         )}

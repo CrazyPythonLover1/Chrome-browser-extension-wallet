@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -18,6 +19,7 @@ const AccountList = styled("div")(({ theme }) => ({
 
 function Header(props) {
   const theme = useTheme();
+  const navigate = useNavigate();
   return (
     <Box
       key={props.page}
@@ -48,7 +50,7 @@ function Header(props) {
           </Box>
         </AccountList>
       </Box>
-      <Box>
+      <Box onClick={() => navigate("/menu")} style={{ cursor: "pointer" }}>
         <MenuIcon color={theme.palette.key_colors.primary_550} />
       </Box>
     </Box>

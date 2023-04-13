@@ -188,7 +188,7 @@ function Transaction() {
                   Estimated Gas Fees
                 </Typography>
                 <InformationIcon
-                  style={{ paddingLeft: "5px",  cursor: "pointer"  }}
+                  style={{ paddingLeft: "5px", cursor: "pointer" }}
                   width="19.4px"
                   height="19.4px"
                   onClick={() => setOpenEstimatePopup(true)}
@@ -213,7 +213,7 @@ function Transaction() {
                   Transaction Speed
                 </Typography>
                 <InformationIcon
-                  style={{ paddingLeft: "5px",  cursor: "pointer" }}
+                  style={{ paddingLeft: "5px", cursor: "pointer" }}
                   width="19.4px"
                   height="19.4px"
                   onClick={() => setOpenTransactionPopup(true)}
@@ -238,7 +238,7 @@ function Transaction() {
                   Clutch Fee
                 </Typography>
                 <InformationIcon
-                  style={{ paddingLeft: "5px",  cursor: "pointer" }}
+                  style={{ paddingLeft: "5px", cursor: "pointer" }}
                   width="19.4px"
                   height="19.4px"
                   onClick={() => setOpenClutchPopup(true)}
@@ -303,8 +303,6 @@ function Transaction() {
       <DialogPopup
         open={openTotalPopup}
         onClose={handleClose}
-        // handleProceed={handleProceed}
-        // title="Secure your assets"
         infoIcon
         description="The total amount reflects the exact amount that will be sent to the receiving wallet. This includes Clutch’s fee, and network fees."
         btn1="Close"
@@ -314,8 +312,6 @@ function Transaction() {
       <DialogPopup
         open={openEstimatedPopup}
         onClose={handleClose}
-        // handleProceed={handleProceed}
-        // title="Secure your assets"
         infoIcon
         description="Gas fees are blockchain transaction fees paid to network validators. This fee is an estimate, and may change at the time of settlement."
         btn1="Close"
@@ -325,10 +321,8 @@ function Transaction() {
       <DialogPopup
         open={openTransactionPopup}
         onClose={handleClose}
-        // handleProceed={handleProceed}
-        // title="Secure your assets"
         infoIcon
-        description="Our 1% fee is automatically factored into the swap price you’re receiving."
+        description="You can choose to apply a higher fee to your transaction, and in doing so, speed it up. On average, transactions process in 12 seconds."
         btn1="Close"
         btn2="Learn more"
       />
@@ -337,10 +331,8 @@ function Transaction() {
       <DialogPopup
         open={openClutchPopup}
         onClose={handleClose}
-        // handleProceed={handleProceed}
-        // title="Secure your assets"
         infoIcon
-        description="You can choose to apply a higher fee to your transaction, and in doing so, speed it up. On average, transactions process in 12 seconds."
+        description="Our 1% fee is automatically factored into the swap price you’re receiving."
         btn1="Close"
         btn2="Learn more"
       />

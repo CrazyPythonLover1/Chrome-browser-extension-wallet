@@ -1,14 +1,13 @@
 import React from "react";
 import { useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { Box } from "@mui/material";
-import NavigationHeader from "../../../../components/NavigationHeader";
 import styled from "@emotion/styled";
-import { DivFlex } from "../../../../components";
-import Button from "../../../../components/Button";
-import DialogPopup from "../../../../components/DialogPopup";
+import { Box } from "@mui/material";
+import NavigationHeader from "../../../components/NavigationHeader";
+import { DivFlex } from "../../../components";
+import Button from "../../../components/Button";
 
-const InputBox = styled.div`
+const InputField = styled.div`
   background: ${({ theme }) => theme.palette.text_colors.neutral_0};
   border: 1px solid ${({ theme }) => theme.palette.text_colors.neutral_275};
   display: flex;
@@ -20,7 +19,7 @@ const InputBox = styled.div`
   width: 343px;
   height: 40px;
   border-radius: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 5px;
 `;
 
 const Label = styled.div`
@@ -44,32 +43,28 @@ const InsideText = styled.div`
   color: ${({ theme }) => theme.palette.text_colors.neutral_675};
 `;
 
-const AdvancedOption = () => {
+const AddNetwork = () => {
   const theme = useTheme();
   const navigate = useNavigate();
-  const [openInfoModal, setOpenInfoModal] = React.useState(false);
 
-  const handleClose = () => {
-    setOpenInfoModal(false);
-  };
-
-  const infoHandler = () => {
-    setOpenInfoModal(true);
-  };
-
-  const advancedBoxData = [
+  const inputFields = [
     {
-      label: "Gas Limit",
+      label: "Network Name",
       leftext: 21000,
       rightText: "",
     },
     {
-      label: "Max Priority Fee (GWEI)",
+      label: "New RPC URL",
       leftext: 1.5,
       rightText: "$0.04 USD",
     },
     {
-      label: "Max Fee (GWEI)",
+      label: "Chain ID",
+      leftext: 21.34,
+      rightText: "$0.01 USD",
+    },
+    {
+      label: "Currency Symbol",
       leftext: 21.34,
       rightText: "$0.01 USD",
     },
@@ -77,11 +72,7 @@ const AdvancedOption = () => {
 
   return (
     <>
-      <NavigationHeader
-        label="Advanced Options"
-        info
-        infoHandler={infoHandler}
-      />
+      <NavigationHeader label="Add Network Manually" info />
       <DivFlex
         padding="16px"
         justifyContent="space-between"
@@ -91,13 +82,13 @@ const AdvancedOption = () => {
         }}
       >
         <Box>
-          {advancedBoxData.map((data, index) => (
+          {inputFields.map((data, index) => (
             <React.Fragment key={index}>
               <Label>{data.label}</Label>
-              <InputBox>
+              <InputField>
                 <InsideText>{data.leftext}</InsideText>
                 <InsideText>{data.rightText}</InsideText>
-              </InputBox>
+              </InputField>
             </React.Fragment>
           ))}
         </Box>
@@ -110,16 +101,8 @@ const AdvancedOption = () => {
           onClick={() => navigate("/")}
         />
       </DivFlex>
-      <DialogPopup
-        open={openInfoModal}
-        onClose={handleClose}
-        infoIcon
-        description="Advanced options allow you to customize fees associated with your transaction, so you can speed it up, or slow it down."
-        btn1="Close"
-        btn2="Learn more"
-      />
     </>
   );
 };
 
-export default AdvancedOption;
+export default AddNetwork;
