@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import NavigationHeader from "../../../components/NavigationHeader";
 import Button from "../../../components/Button";
 import {
+  infoIcon,
   InformationIcon,
   SettingsIcon,
   EthIcon,
@@ -40,10 +41,16 @@ const BoldText675 = styled.p`
 function Transaction() {
   const theme = useTheme();
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
+  const [openTotalPopup, setOpenTotalPopup] = useState(false);
+  const [openEstimatedPopup, setOpenEstimatePopup] = useState(false);
+  const [openTransactionPopup, setOpenTransactionPopup] = useState(false);
+  const [openClutchPopup, setOpenClutchPopup] = useState(false);
 
   const handleClose = () => {
-    setOpen(false);
+    setOpenTotalPopup(false);
+    setOpenEstimatePopup(false);
+    setOpenTransactionPopup(false);
+    setOpenClutchPopup(false);
   };
 
   const handleProceed = () => {
@@ -96,7 +103,7 @@ function Transaction() {
                   style={{ cursor: "pointer" }}
                   width="19.4px"
                   height="19.4px"
-                  onClick={() => setOpen(true)}
+                  onClick={() => setOpenTotalPopup(true)}
                 />
               </DivFlex>
               {/* left bottom text */}
@@ -181,9 +188,10 @@ function Transaction() {
                   Estimated Gas Fees
                 </Typography>
                 <InformationIcon
-                  style={{ paddingLeft: "5px" }}
+                  style={{ paddingLeft: "5px",  cursor: "pointer"  }}
                   width="19.4px"
                   height="19.4px"
+                  onClick={() => setOpenEstimatePopup(true)}
                 />
               </Box>
 
@@ -205,9 +213,10 @@ function Transaction() {
                   Transaction Speed
                 </Typography>
                 <InformationIcon
-                  style={{ paddingLeft: "5px" }}
+                  style={{ paddingLeft: "5px",  cursor: "pointer" }}
                   width="19.4px"
                   height="19.4px"
+                  onClick={() => setOpenTransactionPopup(true)}
                 />
               </Box>
 
@@ -229,9 +238,10 @@ function Transaction() {
                   Clutch Fee
                 </Typography>
                 <InformationIcon
-                  style={{ paddingLeft: "5px" }}
+                  style={{ paddingLeft: "5px",  cursor: "pointer" }}
                   width="19.4px"
                   height="19.4px"
+                  onClick={() => setOpenClutchPopup(true)}
                 />
               </Box>
             </Box>
@@ -289,22 +299,50 @@ function Transaction() {
         />
       </DivFlex>
 
-      {/* dialogue popup */}
+      {/*Total dialogue popup */}
       <DialogPopup
-        open={open}
+        open={openTotalPopup}
         onClose={handleClose}
-        title={
-          <InformationIcon
-            width="48px"
-            height="48px"
-            style={{ marginBottom: "30px" }}
-          />
-        }
+        // handleProceed={handleProceed}
+        // title="Secure your assets"
+        infoIcon
         description="The total amount reflects the exact amount that will be sent to the receiving wallet. This includes Clutch’s fee, and network fees."
         btn1="Close"
-        btn1OnClick={handleProceed}
         btn2="Learn more"
-        btn2OnClick={handleClose}
+      />
+      {/* estimated gas fee  popup */}
+      <DialogPopup
+        open={openEstimatedPopup}
+        onClose={handleClose}
+        // handleProceed={handleProceed}
+        // title="Secure your assets"
+        infoIcon
+        description="Gas fees are blockchain transaction fees paid to network validators. This fee is an estimate, and may change at the time of settlement."
+        btn1="Close"
+        btn2="Learn more"
+      />
+      {/* Transaction speed popup */}
+      <DialogPopup
+        open={openTransactionPopup}
+        onClose={handleClose}
+        // handleProceed={handleProceed}
+        // title="Secure your assets"
+        infoIcon
+        description="Our 1% fee is automatically factored into the swap price you’re receiving."
+        btn1="Close"
+        btn2="Learn more"
+      />
+
+      {/* clutch fee */}
+      <DialogPopup
+        open={openClutchPopup}
+        onClose={handleClose}
+        // handleProceed={handleProceed}
+        // title="Secure your assets"
+        infoIcon
+        description="You can choose to apply a higher fee to your transaction, and in doing so, speed it up. On average, transactions process in 12 seconds."
+        btn1="Close"
+        btn2="Learn more"
       />
     </>
   );
