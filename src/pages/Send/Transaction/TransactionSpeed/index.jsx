@@ -31,10 +31,11 @@ const Title = styled.div`
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  color: ${({ theme }) => theme.palette.key_colors.neutral_675};
+  color: ${({ theme }) => theme.palette.text_colors.neutral_675};
 `;
 
 const SubTitleLeft = styled.div`
+  margin-right: 5px;
   font-family: Lato;
   width: 56px;
   height: 24px;
@@ -43,7 +44,7 @@ const SubTitleLeft = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  color: ${({ theme }) => theme.palette.key_colors.neutral_625};
+  color: ${({ theme }) => theme.palette.text_colors.neutral_675};
 `;
 
 const SubTitleRight = styled.div`
@@ -54,7 +55,7 @@ const SubTitleRight = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
-  color: ${({ theme }) => theme.palette.key_colors.neutral_675};
+  color: ${({ theme }) => theme.palette.text_colors.neutral_675};
 `;
 
 const Switcher = styled.div`
@@ -84,7 +85,6 @@ const SwitcherText = styled.div`
 `;
 
 const AdvanceSettingText = styled.div`
-  width: 131px;
   height: 22px;
   font-family: "Lato";
   font-style: normal;
@@ -95,7 +95,7 @@ const AdvanceSettingText = styled.div`
   color: ${({ theme }) => theme.palette.text_colors.primary_550};
 `;
 
-const TransactionSpeed = () => {
+const TransctionSpeed = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   return (
@@ -114,7 +114,7 @@ const TransactionSpeed = () => {
         <TopBox>
           <Title sx={{}}>0.0031 ETH $4.52</Title>
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <SubTitleLeft>Max Fee:</SubTitleLeft>
+            <SubTitleLeft>Max Fee: </SubTitleLeft>
             <SubTitleRight>0.0045 ETH $5.23</SubTitleRight>
           </Box>
         </TopBox>
@@ -155,4 +155,4 @@ const TransactionSpeed = () => {
   );
 };
 
-export default TransactionSpeed;
+export default TransctionSpeed;
