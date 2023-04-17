@@ -5,9 +5,10 @@ import { Box } from "@mui/material";
 import NavigationHeader from "../../../components/NavigationHeader";
 import { CheckIcon, MinusIcon } from "../../../components/Svg";
 import { DivFlex } from "../../../components";
+import Button from "../../../components/Button";
 
 const MenuWrap = styled.main`
-  padding: 16px;
+  padding: 0px;
 `;
 
 const NetworkItem = styled.div`
@@ -75,19 +76,31 @@ function NetworkPage() {
   return (
     <>
       <NavigationHeader label="Networks" info />
-      <MenuWrap>
-        {networkItems.map((item) => (
-          <NetworkItem key={item.title}>
-            <DivFlex alignItems="center">
-              {item.icon}
-              <Title> {item.title} </Title>
-            </DivFlex>
-            <DetailButton onClick={() => navigate(item.route)}>
-              Details
-            </DetailButton>
-          </NetworkItem>
-        ))}
-      </MenuWrap>
+      <DivFlex
+        flexDirection="column"
+        justifyContent="space-between"
+        style={{ height: "372px", padding: "16px" }}
+      >
+        <MenuWrap>
+          {networkItems.map((item) => (
+            <NetworkItem key={item.title}>
+              <DivFlex alignItems="center">
+                {item.icon}
+                <Title> {item.title} </Title>
+              </DivFlex>
+              <DetailButton onClick={() => navigate(item.route)}>
+                Details
+              </DetailButton>
+            </NetworkItem>
+          ))}
+        </MenuWrap>
+        <Button
+          size="fullWidth"
+          variant="secondary"
+          label="Add Network Manually"
+          onClick={() => navigate("/menu/add_network")}
+        />
+      </DivFlex>
     </>
   );
 }

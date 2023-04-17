@@ -91,8 +91,6 @@ const SendCompleted = () => {
           label="View Transaction"
           style={{
             marginBottom: "9px",
-            // fontSize: "14px",
-            // color: theme.palette.text_colors.primary_475,
           }}
           onClick={() => navigate("/")}
         />

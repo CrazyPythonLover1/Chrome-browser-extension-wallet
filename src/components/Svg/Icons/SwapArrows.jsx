@@ -1,7 +1,7 @@
 import React from "react";
 import Svg from "../Svg";
 
-const Menu = (props) => {
+const SwapArrows = (props) => {
   return (
     <Svg viewBox="0 0 19 19" {...props}>
       <path
@@ -13,4 +13,4 @@ const Menu = (props) => {
   );
 };
 
-export default Menu;
+export default SwapArrows;

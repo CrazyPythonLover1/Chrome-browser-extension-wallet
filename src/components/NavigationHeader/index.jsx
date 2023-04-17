@@ -48,7 +48,7 @@ function NavigationHeader({ label, info, close, infoHandler }) {
         {info ? (
           <InfoIcon
             onClick={() => infoHandler()}
-            style={{ cursor: "pointer", padding: "10px" }}
+            style={{ cursor: "pointer", padding: "10px 0px 10px 10px" }}
           />
         ) : (
           close && (

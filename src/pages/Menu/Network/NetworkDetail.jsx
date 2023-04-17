@@ -6,7 +6,7 @@ import { DivFlex } from "../../../components";
 import NavigationHeader from "../../../components/NavigationHeader";
 import Button from "../../../components/Button";
 
-const SwapDetails = styled.div`
+const DetailBox = styled.div`
   border: 1px solid ${({ theme }) => theme.palette.key_colors.primary_350};
   padding: 16px;
   margin-bottom: 14px;
@@ -36,7 +36,7 @@ function NetworkDetail() {
 
   return (
     <>
-      <NavigationHeader label="Add Network Manually" info />
+      <NavigationHeader label="Networks" info />
       <DivFlex
         flexDirection="column"
         justifyContent="space-between"
@@ -45,7 +45,7 @@ function NetworkDetail() {
       >
         <Box>
           <Box>
-            <SwapDetails>
+            <DetailBox>
               <Typography
                 variant="body2"
                 sx={{
@@ -57,9 +57,9 @@ function NetworkDetail() {
                 Wallet. Note, custom networks are not verified, and may put you
                 at risk. Learn more.
               </Typography>
-            </SwapDetails>
+            </DetailBox>
 
-            <SwapDetails>
+            <DetailBox>
               <DivFlex
                 justifyContent="space-between"
                 alignItems="center"
@@ -151,7 +151,7 @@ function NetworkDetail() {
                   ETH
                 </Typography>
               </DivFlex>
-            </SwapDetails>
+            </DetailBox>
           </Box>
         </Box>
         <Button

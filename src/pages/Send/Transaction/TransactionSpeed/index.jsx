@@ -95,7 +95,7 @@ const AdvanceSettingText = styled.div`
   color: ${({ theme }) => theme.palette.text_colors.primary_550};
 `;
 
-const TransctionSpeed = () => {
+const TransactionSpeed = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   return (
@@ -155,4 +155,4 @@ const TransctionSpeed = () => {
   );
 };
 
-export default TransctionSpeed;
+export default TransactionSpeed;

@@ -64,19 +64,19 @@ function MenuPage() {
       icon: <AddressBookIcon />,
       title: "Address book",
       Subtitle: "Add addresses for easy access",
-      route: "/menu/network",
+      route: "/menu/address_book",
     },
     {
       icon: <ConnectWalletIcon />,
       title: "Wallets",
       Subtitle: "Import, Create, or Connect Wallets",
-      route: "/menu/network",
+      route: "/menu/wallets",
     },
     {
       icon: <LockIcon />,
       title: "Change password",
       Subtitle: "Change your password",
-      route: "/menu/network",
+      route: "/menu",
     },
     {
       icon: <WorldNetworkIcon className="world_network" />,
