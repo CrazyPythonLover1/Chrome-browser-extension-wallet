@@ -30,6 +30,7 @@ import SendCompleted from "./pages/Send/SendCompleted";
 import CheckAssets from "./pages/CheckAssets";
 import InsideQuote from "./pages/Swap/Quotes/InsideQuote";
 import Menu from "./pages/Menu";
+import Nft from "./pages/Nft";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -81,6 +82,9 @@ function AppContainer() {
         <Route path="/swap/inside_quote" element={<InsideQuote />} />
         {/* <Route path="/check_assets" element={<CheckAssets />} /> */}
         <Route path="menu/*" element={<Menu />} />
+
+        {/* Nft */}
+        <Route path="/nft" element={<Nft />} />
       </Routes>
       <Footer />
     </Container>

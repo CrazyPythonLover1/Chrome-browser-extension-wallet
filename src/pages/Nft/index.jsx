@@ -83,7 +83,7 @@ const nftData = [
   },
 ];
 
-const Home = () => {
+const Nft = () => {
   const [isNft, setIsNft] = useState(false);
   return (
     <>
@@ -134,4 +134,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Nft;

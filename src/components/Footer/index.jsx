@@ -53,7 +53,7 @@ function Header() {
     setActiveTab(ACTIVE_TAB.HOME);
   };
   const setIconNftActive = () => {
-    // history.push("/history");
+    navigate("/nft");
     setActiveTab(ACTIVE_TAB.NFT);
   };
   const setIconSendActive = () => {
