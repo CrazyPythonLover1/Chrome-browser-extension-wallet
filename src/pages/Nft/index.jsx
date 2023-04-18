@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTheme } from "@mui/material";
+import { Grid, useTheme, Container } from "@mui/material";
 import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
@@ -60,26 +60,50 @@ const NftBox = styled.div`
   margin-top: 16px;
 `;
 
+const NameText = styled.div`
+height: 24px;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+display: flex;
+align-items: center;
+color: ${({ theme }) => theme.palette.text_colors.neutral_675};
+`;
+
+const MoneyText = styled.div`
+height: 24px;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+display: flex;
+align-items: center;
+color: ${({ theme }) => theme.palette.key_colors.primary_550};
+`;
+
 const nftData = [
   {
     name: "Name",
     image: "https://i.ibb.co/85tk8h3/nft.jpg",
-    monety: 123,
+    monety: 12,
   },
   {
     name: "Name",
     image: "https://i.ibb.co/85tk8h3/nft.jpg",
-    monety: 123,
+    monety: 12,
   },
   {
     name: "Name",
     image: "https://i.ibb.co/85tk8h3/nft.jpg",
-    monety: 123,
+    monety: 12,
   },
   {
     name: "Name",
     image: "https://i.ibb.co/85tk8h3/nft.jpg",
-    monety: 123,
+    monety: 12,
   },
 ];
 
@@ -120,15 +144,27 @@ const Nft = () => {
         )}
 
         {/* //second part */}
+        
+        <Grid container md={6} sm={6}>
+          {nftData.map((nft, index) => (
+            <NftBox key={index}>
+              <img
+                src={nft.image}
+                alt="nft"
+                style={{ width: "148px", height: "128px" }}
+              />
+              <Box style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+                <NameText>
+                  {nft.name}
+                </NameText>
+                <MoneyText>
+                  ${nft.money}k
+                </MoneyText>
+              </Box>
+            </NftBox>
+          ))}
+        </Grid>
 
-        <NftBox>
-          <img
-            src="https://i.ibb.co/85tk8h3/nft.jpg"
-            alt="nft"
-            style={{ width: "148px", height: "128px" }}
-          />
-          <Box>name tk</Box>
-        </NftBox>
       </Box>
     </>
   );
