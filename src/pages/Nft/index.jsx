@@ -121,7 +121,7 @@ const Nft = () => {
             {nftData.map((nft, index) => (
               <NftCard
                 key={nft.tokenId}
-                onclick={() => navigate(`/nft/${nft.tokenId}`)}
+                onClick={() => navigate(`/nft/${nft.tokenId}`)}
               >
                 <img src={nft.image} alt="nft" />
                 <Box
@@ -129,7 +129,7 @@ const Nft = () => {
                     display: "flex",
                     justifyContent: "space-between",
                     width: "100%",
-                  }}
+                  }} 
                 >
                   <NameText>{nft.name}</NameText>
                   <MoneyText>${nft.money}k</MoneyText>
