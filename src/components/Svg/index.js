@@ -39,3 +39,4 @@ export { default as UpDownArrowsIcon } from "./Icons/UpDownArrows";
 export { default as UniIcon } from "./Tokens/Uni.jsx";
 export { default as WalletIcon } from "./Icons/Wallet";
 export { default as WorldNetworkIcon } from "./Icons/WorldNetwork";
+export { default as ListIcon } from "./Icons/List.jsx";
