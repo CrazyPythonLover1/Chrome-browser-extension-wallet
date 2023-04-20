@@ -68,6 +68,9 @@ function AppContainer() {
         <Route path="/2fa_google_auth" element={<GoogleAuth />} />
         <Route path="/google_auth_code" element={<GoogleAuthCode />} />
 
+        {/* Nft */}
+        <Route path="/nft" element={<Nft />} />
+
         {/* send pages  */}
         <Route path="send/*" element={<SendPage />} />
         <Route path="/send/transaction" element={<Transaction />} />
@@ -82,9 +85,6 @@ function AppContainer() {
         <Route path="/swap/inside_quote" element={<InsideQuote />} />
         {/* <Route path="/check_assets" element={<CheckAssets />} /> */}
         <Route path="menu/*" element={<Menu />} />
-
-        {/* Nft */}
-        <Route path="/nft" element={<Nft />} />
       </Routes>
       <Footer />
     </Container>

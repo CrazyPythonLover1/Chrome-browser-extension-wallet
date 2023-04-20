@@ -5,167 +5,142 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import styled from "@emotion/styled";
+import EmptyNft from "./EmptyNft";
+import SearchInput from "../../components/SearchInput";
+import { useEffect } from "react";
 
-const InputField = styled.input`
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px 16px;
-  gap: 8px;
-  background: ${({ theme }) => theme.palette.text_colors.neutral_0};
-  border: 1px solid ${({ theme }) => theme.palette.text_colors.neutral_275};
-  border-radius: 10px;
-  caret-color: ${({ theme }) => theme.palette.text_colors.primary_550};
-  ::placeholder {
-    color: ${({ theme }) => theme.palette.text_colors.neutral_675};
-    font-family: "Lato";
-    font-size: ${({ theme }) => theme.typography.button.fontSize};
-    font-weight: ${({ theme }) => theme.typography.button.fontWeight};
-    line-height: ${({ theme }) => theme.typography.body1.lineHeight};
-  }
-  &:focus {
-    outline: none;
-    border-color: ${({ theme }) => theme.palette.border_colors.primary_350};
-  }
-`;
-
-const BuyNftText = styled.div`
-  font-family: "Helvetica Neue LT Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
+const NftContainer = styled.div`
+  padding: 16px;
   display: flex;
-  align-items: center;
-  text-align: center;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-top: 89px;
-  margin-bottom: 18px;
-  color: ${({ theme }) => theme.palette.text_colors.primary_475};
+  justify-content: space-between;
+  flex-direction: column;
+  height: 372px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
-// second part
-const NftBox = styled.div`
+const NftCard = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  gap: 4px;
   width: 164px;
   height: 172px;
   border: 1px solid #848bed;
   border-radius: 6px;
-  margin-top: 16px;
+  img {
+    width: 148px;
+    height: 128px;
+    border-radius: 6px;
+  }
 `;
 
 const NameText = styled.div`
-height: 24px;
-font-family: 'Lato';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 24px;
-display: flex;
-align-items: center;
-color: ${({ theme }) => theme.palette.text_colors.neutral_675};
+  height: 24px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: ${({ theme }) => theme.palette.text_colors.neutral_675};
 `;
 
 const MoneyText = styled.div`
-height: 24px;
-font-family: 'Lato';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 24px;
-display: flex;
-align-items: center;
-color: ${({ theme }) => theme.palette.key_colors.primary_550};
+  height: 24px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: ${({ theme }) => theme.palette.key_colors.primary_550};
 `;
 
 const nftData = [
   {
+    tokenId: 1,
     name: "Name",
     image: "https://i.ibb.co/85tk8h3/nft.jpg",
-    monety: 12,
+    money: 12,
   },
   {
+    tokenId: 2,
     name: "Name",
     image: "https://i.ibb.co/85tk8h3/nft.jpg",
-    monety: 12,
+    money: 12,
   },
   {
+    tokenId: 3,
     name: "Name",
     image: "https://i.ibb.co/85tk8h3/nft.jpg",
-    monety: 12,
+    money: 12,
   },
   {
+    tokenId: 4,
     name: "Name",
     image: "https://i.ibb.co/85tk8h3/nft.jpg",
-    monety: 12,
+    money: 12,
   },
 ];
 
 const Nft = () => {
-  const [isNft, setIsNft] = useState(false);
+  const navigate = useNavigate();
+  const [isUserHasNft, setIsUserHasNft] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsUserHasNft(true);
+    }, 500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
   return (
     <>
-      <Header page="homepage" />
+      <Header page="nftpage" />
 
-      <Box
-        sx={{
-          padding: "16px",
-          // height: "372px",
-          display: "flex",
-          justifyContent: "space-between",
-          flexDirection: "column",
-        }}
-      >
-        <InputField />
+      <NftContainer>
+        <SearchInput placeholder="Search" />
 
-        {isNft ? (
-          <>
-            <BuyNftText>
-              You aren’t holding any NFTs in this wallet. Click the ‘Buy’ button
-              below to visit OpenSea.
-            </BuyNftText>
-
-            <Button
-              size="normal"
-              variant="secondary"
-              label="Buy NFTs"
-              style={{ marginBottom: "9px" }}
-              onClick={() => navigate("/")}
-            />
-          </>
+        {isUserHasNft ? (
+          <Grid
+            container
+            md={6}
+            sm={6}
+            sx={{ columnGap: "15px", rowGap: "12px", marginTop: "16px" }}
+          >
+            {nftData.map((nft, index) => (
+              <NftCard
+                key={nft.tokenId}
+                onclick={() => navigate(`/nft/${nft.tokenId}`)}
+              >
+                <img src={nft.image} alt="nft" />
+                <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "100%",
+                  }}
+                >
+                  <NameText>{nft.name}</NameText>
+                  <MoneyText>${nft.money}k</MoneyText>
+                </Box>
+              </NftCard>
+            ))}
+          </Grid>
         ) : (
-          ""
+          <EmptyNft />
         )}
-
-        {/* //second part */}
-        
-        <Grid container md={6} sm={6}>
-          {nftData.map((nft, index) => (
-            <NftBox key={index}>
-              <img
-                src={nft.image}
-                alt="nft"
-                style={{ width: "148px", height: "128px" }}
-              />
-              <Box style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
-                <NameText>
-                  {nft.name}
-                </NameText>
-                <MoneyText>
-                  ${nft.money}k
-                </MoneyText>
-              </Box>
-            </NftBox>
-          ))}
-        </Grid>
-
-      </Box>
+      </NftContainer>
     </>
   );
 };

@@ -29,6 +29,7 @@ export { default as PlusIcon } from "./Icons/Plus";
 export { default as QRIcon } from "./Icons/QR.jsx";
 export { default as ReceiveIcon } from "./Icons/Receive";
 export { default as ReloadIcon } from "./Icons/Reload.jsx";
+export { default as SearchIcon } from "./Icons/Search";
 export { default as SendIcon } from "./Icons/Send";
 export { default as SettingsIcon } from "./Icons/Settings.jsx";
 export { default as SwapArrowsIcon } from "./Icons/SwapArrows";
