@@ -161,6 +161,7 @@ const boxData = [
 ];
 
 const SingleNft = () => {
+  const navigate = useNavigate();
   return (
     <>
       <NavigationHeader />
@@ -241,7 +242,7 @@ const SingleNft = () => {
             height="44px"
             label="List"
             icon={<ListIcon width="20px" height="18px" />}
-            onClick={() => console.log("Button clicked!")}
+            onClick={() => navigate("/list")}
           />
         </Box>
       </NftContainer>

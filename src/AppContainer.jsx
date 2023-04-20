@@ -32,6 +32,7 @@ import InsideQuote from "./pages/Swap/Quotes/InsideQuote";
 import Menu from "./pages/Menu";
 import Nft from "./pages/Nft";
 import SingleNft from "./pages/Nft/SingleNft";
+import List from "./pages/Nft/List";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -72,6 +73,7 @@ function AppContainer() {
         {/* Nft */}
         <Route path="/nft" element={<Nft />} />
         <Route path="/nft/:singleNft" element={<SingleNft />} />
+        <Route path="/list" element={<List />} />
 
         {/* send pages  */}
         <Route path="send/*" element={<SendPage />} />
