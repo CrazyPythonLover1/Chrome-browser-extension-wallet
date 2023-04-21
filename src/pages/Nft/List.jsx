@@ -3,9 +3,10 @@ import NavigationHeader from "../../components/NavigationHeader";
 import styled from "@emotion/styled";
 import Input from "../../components/Input";
 import { DivFlex } from "../../components";
-import { EthIcon, ChevronDownIcon } from "../../components/Svg";
+import { EthIcon, ChevronDownIcon, SeaIcon } from "../../components/Svg";
 import { useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
+import Button from "../../components/Button";
 
 const InputField = styled.div`
   flex-basis: 50%;
@@ -122,6 +123,27 @@ const InputBottomText = styled.div`
   color: #a1a2bd;
 `;
 
+const BoxData = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 17px;
+  gap: 10px;
+  position: absolute;
+  width: 337px;
+  height: 197.4px;
+  left: 19px;
+  top: 169px;
+  border: 1px solid #6871ea;
+  border: 1px solid ${({ theme }) => theme.palette.key_colors.primary_550};
+  border-radius: 12px;
+  margin-bottom: 32.6px;
+`;
+
+const LeftBoxData = styled.div``;
+const RightBoxData = styled.div``;
+
 const List = () => {
   return (
     <>
@@ -145,6 +167,40 @@ const List = () => {
           </SelectToken>
         </DivFlex>
         <InputBottomText>1,000.23 USD</InputBottomText>
+
+        <BoxData>
+          <LeftBoxData></LeftBoxData>
+          <RightBoxData></RightBoxData>
+        </BoxData>
+
+        {/* button */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "16px",
+            marginTop: "240px",
+          }}
+        >
+          <Button
+            size="fullWidth"
+            variant="secondary"
+            height="36px"
+            width="163.5px"
+            label="Cancel"
+            onClick={() => console.log("Button clicked!")}
+          />
+
+          <Button
+            size="fullWidth"
+            variant="secondary"
+            height="36px"
+            width="163.5px"
+            label="Next"
+            onClick={() => navigate("/")}
+          />
+        </Box>
       </ListContainer>
     </>
   );
