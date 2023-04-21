@@ -33,6 +33,7 @@ import Menu from "./pages/Menu";
 import Nft from "./pages/Nft";
 import SingleNft from "./pages/Nft/SingleNft";
 import List from "./pages/Nft/List";
+import SingleList from "./pages/Nft/SingleList";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -74,6 +75,7 @@ function AppContainer() {
         <Route path="/nft" element={<Nft />} />
         <Route path="/nft/:singleNft" element={<SingleNft />} />
         <Route path="/list" element={<List />} />
+        <Route path="/singleList" element={<SingleList />} />
 
         {/* send pages  */}
         <Route path="send/*" element={<SendPage />} />

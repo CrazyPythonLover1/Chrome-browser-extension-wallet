@@ -145,6 +145,7 @@ const LeftBoxData = styled.div``;
 const RightBoxData = styled.div``;
 
 const List = () => {
+  const navigate = useNavigate();
   return (
     <>
       <NavigationHeader label="List" info />
@@ -198,7 +199,7 @@ const List = () => {
             height="36px"
             width="163.5px"
             label="Next"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/singleList")}
           />
         </Box>
       </ListContainer>
