@@ -35,6 +35,7 @@ import SingleNft from "./pages/Nft/SingleNft";
 import List from "./pages/Nft/List";
 import SingleList from "./pages/Nft/SingleList";
 import NftCompleted from "./pages/Nft/NftCompleted";
+import ViewOpenSea from "./pages/Nft/ViewOpenSea";
 
 const Container = styled("div")(({ theme }) => ({
   width: "375px",
@@ -78,6 +79,7 @@ function AppContainer() {
         <Route path="/list" element={<List />} />
         <Route path="/singleList" element={<SingleList />} />
         <Route path="/nftCompleted" element={<NftCompleted />} />
+        <Route path="/viewOpenSea" element={<ViewOpenSea />} />
 
         {/* send pages  */}
         <Route path="send/*" element={<SendPage />} />

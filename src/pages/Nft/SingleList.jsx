@@ -73,7 +73,7 @@ const SingleList = () => {
             height="36px"
             width="163.5px"
             label="Next"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/viewOpenSea")}
           />
         </Box>
       </ListContainer>
