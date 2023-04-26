@@ -14,6 +14,18 @@ const ReloadIconText = styled.div`
   align-items: center;
 `;
 
+const DeccriptionText = styled.div`
+  font-family: "Helvetica Neue LT Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.palette.key_colors.primary_475};
+`;
+
 const NewTransctionText = styled.div`
   height: 24px;
   font-family: "Lato";
@@ -48,6 +60,10 @@ const NftCompleted = () => {
           <CompletedCheck width="126px" height="88.54" />
         </Box>
 
+        <DeccriptionText style={{ textAlign: "center" }}>
+          Listing Pink Room #109 on OpenSea <br /> for 0.01 ETH.
+        </DeccriptionText>
+
         <ReloadIconText>
           <ReloadIcon
             style={{ paddingRight: "4px" }}
@@ -60,7 +76,7 @@ const NftCompleted = () => {
         <Button
           size="fullWidth"
           variant="primary"
-          label="View Transaction"
+          label="View on OpenSea"
           style={{
             marginBottom: "9px",
           }}
